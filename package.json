@@ -1,10 +1,7 @@
 {
   "name": "WEB-SurvivalTanks",
   "version": "1.0.0",
-  "private": true,
-  "engines": {
-    "node": "12.x"
-  },
+  "private": false,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
