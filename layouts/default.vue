@@ -1,6 +1,6 @@
 <template>
 <div>
-  <p>asdf</p>
-  <Nuxt />
+  <mainHeader></mainHeader>
+    <Nuxt />
 </div>
 </template>
