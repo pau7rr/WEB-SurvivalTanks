@@ -1,7 +1,7 @@
 <template>
 <div class="h-28 bg-gray-900 w-full flex font-sans">
     <div class="m-auto">
-        <p class="text-white text-4xl font-bold">Survival Tanks klk</p>
+        <p class="text-white text-4xl font-bold">Survival Tanks</p>
     </div>
 </div>
 </template>
