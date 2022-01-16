@@ -2,11 +2,15 @@
 <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
   <div class="md:flex">
     <div class="md:shrink-0">
-      <img class="h-48 w-full object-cover md:h-full md:w-48" :src="thumbnail" alt="">
+      <img class="h-48 w-full object-cover md:h-full md:w-48" :src="thumbnail" alt="thumbnail">
     </div>
     <div class="p-8">
       <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{{ version }}</div>
-      <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{{ title }}</a>
+      <nuxt-link
+        class="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+        :key="slug"
+        :to="`devlogs/${slug}`"  
+      > {{title}}</nuxt-link>
       <p class="mt-2 text-slate-500">{{ summary }}</p>
     </div>
   </div>
@@ -20,6 +24,12 @@ export default {
         title: String,
         summary: String,
         thumbnail: String,
-    }
+        slug: String,
+    },
+    computed: {
+      devlogSlug() {
+        return '/devlogs/' + this.slug
+      },
+    },
 }
 </script>

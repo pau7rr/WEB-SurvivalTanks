@@ -1,7 +1,7 @@
 <template>
     <section>
         <div class=" mt-10" v-for="devlog in devlogs" :key="devlog.id">
-            <devlog-card :version="devlog.version" :title="devlog.title" :summary="devlog.summary" :thumbnail="devlog.thumbnail_url" />
+            <devlog-card :slug="devlog.slug" :version="devlog.version" :title="devlog.title" :summary="devlog.summary" :thumbnail="devlog.thumbnail_url" />
         </div>
     </section>
 </template>
@@ -13,7 +13,7 @@ export default {
     },
     computed: {
         devlogs() {
-            return this.$store.state.devlogs.list
+            return this.$store.getters['devlogs/all']
         }
     },
 }

@@ -1,5 +1,6 @@
 export const state = () => ({
-    list: []
+    list: [],
+    isLoaded: false,
 })
   
 export const getters = {
@@ -7,19 +8,23 @@ export const getters = {
         return state.list
     },
     bySlug: (state) => (slug) => {
-        console.log('slug', slug);
-        return state.list.filter((e) => e.slug === slug)      
+        return state.list.filter((e) => e.slug === slug)[0]      
     },
 }
 
 export const mutations = {
     addDevlogs(state, devlogs) {
       state.list = devlogs
-    }
+    },
+    setLoaded(state) {
+        state.isLoaded = true
+    },
 }
 
 export const actions = {
-    async dispatch({commit}) {
+    async dispatch({commit, state}) {
+
+        if(state.isLoaded) return
 
         fetch('http://127.0.0.1:8000/api/devlogs')
         .then(function(response) {
@@ -32,6 +37,8 @@ export const actions = {
         .catch(function(err) {
             console.error(err);
         });
+
+        commit('setLoaded')
 
     }
 }
