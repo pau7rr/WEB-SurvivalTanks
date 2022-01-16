@@ -4,8 +4,12 @@ export const state = () => ({
   
 export const getters = {
     all(state) {
-      return state.list
-    }
+        return state.list
+    },
+    bySlug: (state) => (slug) => {
+        console.log('slug', slug);
+        return state.list.filter((e) => e.slug === slug)      
+    },
 }
 
 export const mutations = {
