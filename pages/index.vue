@@ -1,7 +1,6 @@
 <template>
 <section>
     <home-image></home-image>
-
 </section>
 </template>
 

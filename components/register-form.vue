@@ -80,6 +80,7 @@
         </button>
       </div>
     </form>
+    <alert-danger v-if="responseStatus !== ''" class=" mt-2" :text="responseStatus"></alert-danger>
   </div>
 </div>
 </template>
@@ -113,13 +114,24 @@ export default {
             .catch(error => console.error('Error:', error))
             .then(response => {
                 console.log('Success:', response)
+                this.responseFlow(response)
             })
 
 
         },
-        saveID(id) {
-            console.log('klkkl', this.responseStatus)
-            //localStorage.setItem('user_id', id)
+        responseFlow(res) {
+
+          if (!res.success) {
+            this.responseStatus = res.message[Object.keys(res.message)[0]][0]
+            return
+          }
+
+          this.responseStatus = ''
+          this.saveParams(res.token.token)
+          this.$router.push('/');
+        },
+        saveParams(token) {
+          sessionStorage.setItem('jwt', token)
         }
     }
 
