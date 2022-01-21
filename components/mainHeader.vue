@@ -1,6 +1,6 @@
 <template>
 <div class="h-28 bg-gray-900 w-full flex font-sans">
-    <div class="m-auto">
+    <div class="m-auto flex">
         <p class="text-white text-4xl font-bold">Survival Tanks</p>
     </div>
 </div>
