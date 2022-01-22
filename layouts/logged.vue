@@ -1,6 +1,6 @@
 <template>
 <div>
-  <main-header/>
+    <logged-header/>
     <Nuxt />
 </div>
 </template>

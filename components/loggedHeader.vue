@@ -1,17 +1,12 @@
 <template>
-<div class="header h-28 bg-gray-900 w-full font-sans">
+<div class="h-28 bg-gray-900 w-full font-sans">
     <div class="m-auto w-full h-full grid grid-cols-3 justify-items-center place-items-center">
-        <div class=" flex gap-x-5">
-            <nuxt-link class=" text-white" to="/devlogs">Devlogs</nuxt-link>
-            <nuxt-link class=" text-white" to="/devlogs">Team</nuxt-link>
-            <nuxt-link class=" text-white" to="/devlogs">Contact Us</nuxt-link>
-        </div>
+        <div></div>
         <nuxt-link to="/">
             <p class=" text-white text-4xl font-bold">Survival Tanks</p>
         </nuxt-link>
         <div class=" flex gap-x-4">
-            <nuxt-link to="/register"><button class="p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-md focus:border-4 border-gray-300">Sign Up</button></nuxt-link>
-            <button class="p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-md focus:border-4 border-gray-300" @click="showModal = !showModal">Sign In</button>
+            <button class="p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-md focus:border-4 border-gray-300">Log Out</button>
         </div>
     </div>
     <transition name="fade">
@@ -37,12 +32,6 @@ export default {
 </script>
 
 <style scoped>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,300&display=swap');
-
-    .header {
-        font-family: 'Montserrat', sans-serif;
-    }
-
     .fade-enter-active, .fade-leave-active {
     transition: opacity .5s
     }

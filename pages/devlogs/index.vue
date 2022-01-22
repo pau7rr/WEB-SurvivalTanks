@@ -8,6 +8,12 @@
 
 <script>
 export default {
+    layout () {
+        if (sessionStorage.getItem('jwt')) {
+            return 'logged'
+        }
+        return 'default' 
+    },
     async asyncData({store}) {
         await store.dispatch('devlogs/dispatch')
     },
