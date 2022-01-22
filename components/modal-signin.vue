@@ -15,9 +15,9 @@
     "
   >
     <!-- modal -->
-    <div class="bg-white rounded shadow-lg  w-96">
+    <div class="bg-white rounded shadow-lg w-96">
       <!-- modal header -->
-      <div class=" px-4  flex justify-end items-center ">
+      <div class="px-4 flex justify-end items-center">
         <button class="text-black close-modal" @click="$emit('close')">
           &cross;
         </button>
@@ -37,7 +37,7 @@
           overflow-hidden
         "
       >
-        <div class="w-full  p-8">
+        <div class="w-full p-8">
           <form method="post" action="#" @submit.prevent="login">
             <h1 class="text-2xl font-bold">Sign In to our game!</h1>
             <!-- <div>
@@ -142,19 +142,19 @@
 
 <script>
 export default {
-    data: () => {
-        return {
-            form: {
-                email: '',
-                password: '',
-            },
-            responseStatus: '',
-        }
-    },
-    methods: {
-        login() {
-            console.log(this.form);
-        },
+  data: () => {
+    return {
+      form: {
+        email: '',
+        password: '',
+      },
+      responseStatus: '',
     }
+  },
+  methods: {
+    login() {
+      console.log(this.form)
+    },
+  },
 }
 </script>

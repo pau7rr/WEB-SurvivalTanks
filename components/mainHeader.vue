@@ -1,10 +1,11 @@
 <template>
-<div class="h-28 bg-gray-900 w-full flex font-sans">
-    <div class="m-auto flex">
-        <p class="text-white text-4xl font-bold">Survival Tanks</p>
+<div class="h-28 bg-gray-900 w-full font-sans">
+    <div class="m-auto w-full h-full border-8 border-green-400 grid grid-cols-3 justify-items-center place-items-center">
+        <div></div>
+        <p class=" text-white text-4xl font-bold">Survival Tanks</p>
         <button class=" bg-red-300" @click="showModal = !showModal">Sign In</button>
     </div>
-      <transition name="fade">
+    <transition name="fade">
     <modal-signin v-if="showModal" @close="closeModal"/>
     </transition>
 </div>
