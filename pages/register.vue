@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style >
-body {
-    background-color: gainsboro;
-}
+    body {
+        background-color: gainsboro;
+    }
 </style>
