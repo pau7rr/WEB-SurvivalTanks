@@ -116,8 +116,6 @@ export default {
                 console.log('Success:', response)
                 this.responseFlow(response)
             })
-
-
         },
         responseFlow(res) {
 

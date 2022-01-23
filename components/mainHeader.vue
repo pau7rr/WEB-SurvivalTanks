@@ -9,9 +9,9 @@
         <nuxt-link to="/">
             <p class=" text-white text-4xl font-bold">Survival Tanks</p>
         </nuxt-link>
-        <div class=" flex gap-x-4">
-            <nuxt-link to="/register"><button class="p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-md focus:border-4 border-gray-300">Sign Up</button></nuxt-link>
-            <button class="p-2 pl-5 pr-5 bg-gray-500 text-gray-100 text-lg rounded-md focus:border-4 border-gray-300" @click="showModal = !showModal">Sign In</button>
+        <div class=" text-white flex gap-x-4">
+            <nuxt-link to="/register"><button>Sign Up</button></nuxt-link>
+            <button @click="showModal = !showModal">Sign In</button>
         </div>
     </div>
     <transition name="fade">
@@ -25,7 +25,6 @@ export default {
     data: () => {
         return {
             showModal: false,
-            logged: false,
         }
     },
     methods: {

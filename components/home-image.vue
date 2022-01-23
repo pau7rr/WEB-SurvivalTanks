@@ -1,6 +1,6 @@
 <template>
   <div>
-      <img src="https://images.hdqwalls.com/wallpapers/world-of-tanks-games-q2.jpg" alt="tank">
+      <img class="homeImg" src="https://images.hdqwalls.com/wallpapers/world-of-tanks-games-q2.jpg" alt="tank">
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style>
-    img{
+    .homeImg{
         filter: grayscale(100%);
     }
 </style>
