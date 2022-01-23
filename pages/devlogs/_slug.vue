@@ -6,6 +6,12 @@
 
     <script>
     export default {
+        layout () {
+        if (sessionStorage.getItem('jwt')) {
+            return 'logged'
+        }
+            return 'default' 
+        },
         async asyncData({store, params}) {
             await store.dispatch('devlogs/dispatch')
             return { slug: params.slug }
