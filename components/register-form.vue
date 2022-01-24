@@ -11,7 +11,7 @@
   </div>
   <div class="w-full xl:w-1/2 p-8">
     <form method="post" action="#" @submit.prevent="register">
-      <h1 class=" text-2xl font-bold">Sign up to our game</h1>
+      <h1 @click.prevent="test" class=" text-2xl font-bold">Sign up to our game</h1>
       <!-- <div>
         <span class="text-gray-600 text-sm">
           Don't have an account?
@@ -113,7 +113,6 @@ export default {
              )
             .catch(error => console.error('Error:', error))
             .then(response => {
-                console.log('Success:', response)
                 this.responseFlow(response)
             })
         },
@@ -129,8 +128,13 @@ export default {
           this.$router.push('/');
         },
         saveParams(token) {
-          sessionStorage.setItem('jwt', token)
-        }
+          localStorage.setItem('jwt', token)
+        },
+        test() {
+          
+          this.$auth.loginWith('google')
+          
+        },
     }
 
 }

@@ -9,7 +9,7 @@
 <script>
 export default {
     layout () {
-        if (sessionStorage.getItem('jwt')) {
+        if (localStorage.getItem('jwt')) {
             return 'logged'
         }
         return 'default' 

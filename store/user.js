@@ -27,7 +27,7 @@ export const actions = {
 
         if(state.isLoaded) return
 
-        const jwt = sessionStorage.getItem('jwt')
+        const jwt = localStorage.getItem('jwt')
         const options = { mode: 'cors', headers: {
             'Content-Type': 'application/json',
             'Accept': 'aplication/json',
