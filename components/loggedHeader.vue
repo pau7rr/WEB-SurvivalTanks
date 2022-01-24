@@ -44,7 +44,8 @@ export default {
     },
     methods: {
         logout() {
-            sessionStorage.removeItem('jwt')
+            localStorage.removeItem('jwt')
+            this.$auth.logout()
             this.$router.push('/')
             location.reload()
         },

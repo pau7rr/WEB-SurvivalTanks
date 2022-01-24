@@ -40,7 +40,21 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
   ],
+
+  auth: {
+    strategies: {
+      google: {
+        clientId: '774731750804-gb1lqvrn7jmlmlf7348m84v9ohdrjmhr.apps.googleusercontent.com',
+        codeChallengeMethod: '',
+        responseType: "id_token token",
+        endpoints: {
+          token: 'http://127.0.0.1:8000/api/sociallogin/google', // somm backend url to resolve your auth with google and give you the token back // the endpoint to get the user info after you recived the token 
+        },
+      },
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},

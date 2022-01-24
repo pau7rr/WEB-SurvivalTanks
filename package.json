@@ -10,9 +10,11 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@nuxtjs/auth-next": "5.0.0-1642755117.7a526bb",
     "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.15.1",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.7",
+    "vue-social-auth": "^1.4.9"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.2.0",
