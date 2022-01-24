@@ -126,6 +126,7 @@ export default {
           this.responseStatus = ''
           this.saveParams(res.token.token)
           this.$router.push('/');
+          
         },
         saveParams(token) {
           localStorage.setItem('jwt', token)

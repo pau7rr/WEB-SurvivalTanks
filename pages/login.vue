@@ -1,5 +1,5 @@
 <template>
-  <div>klk</div>
+  <div></div>
 </template>
 
 <script>
