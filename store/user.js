@@ -49,5 +49,36 @@ export const actions = {
 
         commit('setLoaded')
 
-    }
+    },
+
+    async dispatchLogin(context, {email, password}) {
+
+        const options = {
+            method: 'POST', 
+            body: JSON.stringify({email, password}), 
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        }
+        
+        await fetch('http://127.0.0.1:8000/api/login', options)
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(data) {
+
+            const res = JSON.parse(data)
+
+            if (res.success) {
+                localStorage.setItem('jwt', res.token.token)
+                location.reload()
+                return
+            }
+
+
+        })
+        .catch(function(err) {
+            console.error(err);
+        });
+    },
 }
