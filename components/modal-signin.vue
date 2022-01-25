@@ -103,11 +103,12 @@
                 v-model="form.password"
               />
               <!-- <a
-          class="inline-block align-baseline text-sm text-gray-600 hover:text-gray-800"
-          href="/forgot"
-        >
-          Forgot Password?
-        </a> -->
+              class="inline-block align-baseline text-sm text-gray-600 hover:text-gray-800"
+              href="/forgot"
+            >
+              Forgot Password?
+            </a> -->
+            <alert-danger v-if="failed" text="Wrong credentials!"></alert-danger>
             </div>
             <div class="flex w-full mt-8">
               <button
@@ -129,11 +130,6 @@
               </button>
             </div>
           </form>
-          <alert-danger
-            v-if="responseStatus !== ''"
-            class="mt-2"
-            :text="responseStatus"
-          ></alert-danger>
         </div>
       </div>
     </div>
@@ -148,12 +144,16 @@ export default {
         email: '',
         password: '',
       },
-      responseStatus: '',
+      failed: false,
     }
   },
   methods: {
-    login() {
-      console.log(this.form)
+    async login() {
+      const login = await this.$store.dispatch('user/dispatchLogin', {email: this.form.email, password: this.form.password})
+      if (!login) {
+        this.failed = true
+      }
+
     },
   },
 }
