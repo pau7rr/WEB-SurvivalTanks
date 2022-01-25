@@ -150,6 +150,7 @@ export default {
   methods: {
     async login() {
       const login = await this.$store.dispatch('user/dispatchLogin', {email: this.form.email, password: this.form.password})
+      
       if (!login) {
         this.failed = true
       }
