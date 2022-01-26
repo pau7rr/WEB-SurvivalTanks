@@ -9,10 +9,7 @@
         <nuxt-link to="/">
             <p class=" text-white text-4xl font-bold">Survival Tanks</p>
         </nuxt-link>
-        <div class=" text-white flex gap-x-4">
-            <nuxt-link to="/register"><button>Sign Up</button></nuxt-link>
-            <button @click="showModal = !showModal">Sign In</button>
-        </div>
+        <button class=" text-white" @click="showModal = !showModal">Play Game</button>
     </div>
     <transition name="fade">
     <modal-signin v-if="showModal" @close="closeModal"/>
