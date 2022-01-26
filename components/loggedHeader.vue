@@ -10,7 +10,7 @@
             <p class=" text-white text-4xl font-bold">Survival Tanks</p>
         </nuxt-link>
         <div class=" flex gap-x-4 justify-self-end mr-10">
-            <nuxt-link to="/register">
+            <nuxt-link to="/my-tank">
                 <div class=" flex gap-x-4 mr-20">
                     <img class=" self-center w-14 h-14 rounded-full border-2" src="https://www.creativefabrica.com/wp-content/uploads/2021/06/12/mountain-landscape-illustration-design-b-Graphics-13326021-1.jpg" alt="profile">
                     <p class=" self-center text-white">{{user.username}}</p>
