@@ -1,6 +1,6 @@
 <template>
 <div>
-  <main-header/>
+  <navbar-no-logged/>
     <Nuxt />
 </div>
 </template>
