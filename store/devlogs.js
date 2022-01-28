@@ -26,7 +26,7 @@ export const actions = {
 
         if(state.isLoaded) return
 
-        fetch('http://127.0.0.1:8000/api/devlogs')
+        fetch(process.env.API_BASE_URL + 'api/devlogs')
         .then(function(response) {
             return response.text();
         })

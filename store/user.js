@@ -35,7 +35,7 @@ export const actions = {
             }, 
         }
 
-        fetch('http://127.0.0.1:8000/api/user', options)
+        fetch(process.env.API_BASE_URL + 'api/user', options)
         .then(function(response) {
             return response.text();
         })
@@ -61,7 +61,7 @@ export const actions = {
             }
         }
         
-        await fetch('http://127.0.0.1:8000/api/login', options)
+        await fetch(process.env.API_BASE_URL + 'api/login', options)
         .then(function(response) {
             return response.text();
         })
