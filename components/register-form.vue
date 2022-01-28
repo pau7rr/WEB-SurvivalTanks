@@ -105,14 +105,15 @@ export default {
     },
     methods: {
         register() {
-            const url = "http://127.0.0.1:8000/api/register"
+            const url = process.env.API_BASE_URL +  "api/register"
             const data = this.form
 
             fetch(url, {
                 method: 'POST', 
                 body: JSON.stringify(data), 
                 headers:{
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
             }
             }).then(res => 
                res.json()

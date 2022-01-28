@@ -14,9 +14,11 @@ export default {
     },
     created() {
 
+        console.log(process.env.API_BASE_URL);
+
         if (this.$auth.loggedIn && !localStorage.getItem('jwt')) {
 
-            const url = "http://127.0.0.1:8000/api/sociallogin"
+            const url = process.env.API_BASE_URL + "api/sociallogin"
             const data = {
                 name: this.$auth.user.name,
                 email: this.$auth.user.email,
