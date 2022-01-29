@@ -1,10 +1,10 @@
 <template>
-<div class="header h-auto bg-gray-900 w-full font-sans p-3 md:p-6">
+<div class="header h-auto bg-gray-900 w-full p-3 md:p-6">
     <div class="m-auto w-full h-full grid grid-cols-3 justify-items-center place-items-center">
 
-        <nuxt-link class=" text-center" to="/">
-            <p class=" hidden md:inline text-white text-xl md:text-2xl lg:text-4xl font-bold">Survival Tanks</p>
-            <img class=" md:hidden w-10" src="/icons/tank.png" alt="icon">
+        <nuxt-link class=" text-center flex gap-x-4" to="/">
+            <img class="  w-10" src="/icons/tank.png" alt="icon">
+            <p class=" hidden lg:inline text-white text-xl md:text-2xl lg:text-3xl font-bold">Survival Tanks</p>
         </nuxt-link>
 
         <div class=" hidden md:flex gap-x-5">
