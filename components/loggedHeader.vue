@@ -13,11 +13,11 @@
             <nuxt-link class=" text-white" to="/devlogs">Contact Us</nuxt-link>
         </div>
 
-        <div class=" flex gap-x-4 md:justify-self-end mr-10">
+        <div class=" flex gap-x-4 ">
             <nuxt-link to="/my-tank">
-                <div class=" flex gap-x-4 mr-20">
+                <div class=" flex gap-x-4">
                     <img class=" self-center w-14 h-14 rounded-full border-2" src="https://www.creativefabrica.com/wp-content/uploads/2021/06/12/mountain-landscape-illustration-design-b-Graphics-13326021-1.jpg" alt="profile">
-                    <p class=" self-center text-white">{{user.username}}</p>
+                    <p class=" hidden md:inline self-center text-white">{{user.username}}</p>
                 </div>
             </nuxt-link>
             <button class=" hidden md:inline text-white" @click="logout">Log Out</button>
