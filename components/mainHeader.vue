@@ -4,7 +4,7 @@
 
         <nuxt-link class=" text-center flex gap-x-4" to="/">
             <img class="  w-10" src="/icons/tank.png" alt="icon">
-            <p class=" hidden lg:inline text-white text-xl md:text-2xl lg:text-3xl font-bold">Survival Tanks</p>
+            <p class=" hidden self-end lg:inline text-white text-xl md:text-2xl lg:text-3xl font-bold">Survival Tanks</p>
         </nuxt-link>
 
         <div class=" hidden md:flex gap-x-5">
