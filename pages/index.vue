@@ -14,8 +14,6 @@ export default {
     },
     created() {
 
-        console.log(process.env.API_BASE_URL);
-
         if (this.$auth.loggedIn && !localStorage.getItem('jwt')) {
 
             const url = process.env.API_BASE_URL + "api/sociallogin"
