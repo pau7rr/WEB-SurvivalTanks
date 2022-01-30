@@ -1,6 +1,6 @@
 <template>
   <div>
-      MY TANK PAGE
+      {{myTank}}
   </div>
 </template>
 
@@ -13,5 +13,10 @@ export default {
         }
         return 'default' 
     },
+    computed: {
+        myTank() {
+            return this.$store.state.mytank.mytank      
+        },
+    }
 }
 </script>
