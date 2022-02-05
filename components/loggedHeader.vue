@@ -54,6 +54,7 @@ export default {
     methods: {
         logout() {
             localStorage.removeItem('jwt')
+            localStorage.removeItem('userTankID')
             this.$auth.logout()
             this.$router.push('/')
             location.reload()
