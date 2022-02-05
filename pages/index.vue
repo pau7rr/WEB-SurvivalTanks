@@ -34,10 +34,9 @@ export default {
              )
             .catch(error => console.error('Error:', error))
             .then(response => {
-
                 localStorage.setItem('jwt', response.token.token)
+                localStorage.setItem('userTankID', response.user.user_tank_id)
                 location.reload()
-
             })
         }
     },

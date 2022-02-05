@@ -131,12 +131,13 @@ export default {
           }
 
           this.responseStatus = ''
-          this.saveParams(res.token.token)
+          this.saveParams(res.token.token, res.user.user_tank_id)
           this.$router.push('/');
           
         },
-        saveParams(token) {
+        saveParams(token, userTankID) {
           localStorage.setItem('jwt', token)
+          localStorage.setItem('userTankID', userTankID)
         },
         google() {
           
