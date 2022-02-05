@@ -1,6 +1,6 @@
 <template>
 <section>
-    <home-image></home-image>
+    <video-trailer/>
 </section>
 </template>
 
