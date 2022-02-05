@@ -71,6 +71,7 @@ export const actions = {
 
             if (res.success) {
                 localStorage.setItem('jwt', res.token.token)
+                localStorage.setItem('userTankID', res.user.user_tank_id)
                 location.reload()
                 return
             }
