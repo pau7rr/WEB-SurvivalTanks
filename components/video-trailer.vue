@@ -1,11 +1,14 @@
 <template>
     <section>
         <video class=" absolute" autoplay muted loop>
-            <source src="/videos/video2.mp4" type="video/mp4">
+            <source src="/videos/video3.mp4" type="video/mp4">
         </video>
-        <div class=" border-2 relative text-white lg:top-80 text-center">
-            <h1 class="videoTitle">PLAY OUR GAME</h1>
-            <p class="">Best tank game of 2022</p>
+        <div class=" relative text-white top-6 lg:top-72 text-center">
+            <h1 class="videoTitle text-4xl md:text-7xl text-sky-brown">PLAY OUR GAME</h1>
+            <p class="videoSub text-lg md:text-3xl pt-4">Best tank game of 2022</p>
+            <button class="playButton mt-10 bg-sky-brown py-3 px-8 text-gray-800 font-semibold">
+                GET STARTED
+            </button>
         </div>
     </section>
 </template>
@@ -21,7 +24,14 @@ export default {
 
     .videoTitle {
         font-family: 'Rowdies', cursive;
-        font-size: 5em;
+    }
+
+    .videoSub {
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .playButton {
+        font-family: 'Montserrat', sans-serif;
     }
 
 </style>
