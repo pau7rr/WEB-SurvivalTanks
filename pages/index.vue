@@ -1,11 +1,14 @@
 <template>
 <section>
-    <home-image></home-image>
+    <video-trailer/>
+    <game-description/>
 </section>
 </template>
 
 <script>
+import gameDescription from '~/components/game-description.vue'
 export default {
+  components: { gameDescription },
     layout () {
         if (localStorage.getItem('jwt')) {
             return 'logged'
