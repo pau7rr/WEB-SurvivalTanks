@@ -1,7 +1,7 @@
 <template>
-    <section class=" relative overflow-hidden h-56 md:h-128 lg:h-172">
+    <section class=" relative overflow-hidden h-56 md:h-96 lg:h-172">
             <video class=" absolute object-cover h-full w-full" autoplay muted loop>
-                <source src="/videos/video3.mp4" type="video/mp4">
+                <source src="/videos/gameplay1.mp4" type="video/mp4">
             </video>
             <div class=" relative text-white top-6 md:top-36 lg:top-72 text-center">
                 <h1 class="videoTitle text-4xl md:text-7xl text-sky-brown">PLAY OUR GAME</h1>
@@ -32,6 +32,11 @@ export default {
     
     .playButton {
         font-family: 'Montserrat', sans-serif;
+    }
+
+    video {
+        -webkit-filter: brightness(35%); /* Safari 6.0 - 9.0 */
+        filter: brightness(35%);
     }
 
 </style>
