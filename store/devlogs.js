@@ -26,7 +26,13 @@ export const actions = {
 
         if(state.isLoaded) return
 
-        fetch(process.env.API_BASE_URL + 'api/devlogs')
+        fetch(process.env.API_BASE_URL + 'api/devlogs', {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+        })
         .then(function(response) {
             return response.text();
         })
