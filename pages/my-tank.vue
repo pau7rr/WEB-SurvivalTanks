@@ -1,7 +1,10 @@
 <template>
   <section>
-      {{userTank}}
+    <div class="grid grid-cols-1 md:flex md:justify-center gap-x-24 mt-20">
       <tank-stats :stat="userTank.strength" text="Strength"/>
+      <tank-stats :stat="userTank.health" text="Health"/>
+      <tank-stats :stat="userTank.speed" text="Speed"/>
+    </div>
   </section>
 </template>
 
@@ -12,7 +15,7 @@ export default {
         if (localStorage.getItem('jwt')) {
             return 'logged'
         }
-        return 'default' 
+        return 'default'
     },
     async asyncData({store}) {
         const userTankID = localStorage.getItem('userTankID')
@@ -20,7 +23,7 @@ export default {
     },
     computed: {
         userTank() {
-            return this.$store.state.userTank.userTank 
+            return this.$store.state.userTank.userTank
         }
     }
 }
