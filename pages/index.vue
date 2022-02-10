@@ -2,6 +2,7 @@
 <section>
     <video-trailer/>
     <game-description/>
+    <banner-tanks/>
 </section>
 </template>
 
@@ -13,7 +14,7 @@ export default {
         if (localStorage.getItem('jwt')) {
             return 'logged'
         }
-        return 'default' 
+        return 'default'
     },
     created() {
 
@@ -27,12 +28,12 @@ export default {
             }
 
             fetch(url, {
-                method: 'POST', 
-                body: JSON.stringify(data), 
+                method: 'POST',
+                body: JSON.stringify(data),
                 headers:{
                 'Content-Type': 'application/json'
             }
-            }).then(res => 
+            }).then(res =>
                res.json()
              )
             .catch(error => console.error('Error:', error))
