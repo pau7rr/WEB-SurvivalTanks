@@ -2,13 +2,13 @@ export const state = () => ({
     list: [],
     isLoaded: false,
 })
-  
+
 export const getters = {
     all(state) {
         return state.list
     },
     bySlug: (state) => (slug) => {
-        return state.list.filter((e) => e.slug === slug)[0]      
+        return state.list.filter((e) => e.slug === slug)[0]
     },
 }
 
@@ -37,8 +37,7 @@ export const actions = {
             return response.text();
         })
         .then(function(data) {
-            const devlogs = data
-            commit('addDevlogs', JSON.parse(devlogs))
+          commit('addDevlogs', JSON.parse(data))
         })
         .catch(function(err) {
             console.error(err);
