@@ -1,7 +1,7 @@
 <template>
   <div class="w-52 h-16 border-2 border-gray-800 flex">
     <div class="flex place-items-center self-center m-auto gap-x-5">
-      <p class="font-bold">23</p>
+      <p class="font-bold">{{ coins }}</p>
       <img src="/icons/coin.svg" alt="coin" width="35px">
     </div>
   </div>
@@ -9,10 +9,9 @@
 
 <script>
 export default {
-  name: "coins-field"
+  props: {
+    coins: { required: true },
+  },
 }
 </script>
 
-<style scoped>
-
-</style>
