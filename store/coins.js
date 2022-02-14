@@ -46,6 +46,9 @@ export const actions = {
   },
 
   async buyItem({commit, state, dispatch}, {price, type}) {
+
+    if (price > state.coins) return
+
     fetch(process.env.API_BASE_URL + 'api/user/resCoins', {
       method: 'PUT',
       mode: 'cors',
