@@ -9,7 +9,7 @@
 
         <div class=" hidden md:flex gap-x-5">
             <nuxt-link class=" text-white" to="/devlogs">Devlogs</nuxt-link>
-            <nuxt-link class=" text-white" to="/devlogs">Team</nuxt-link>
+            <nuxt-link class=" text-white" to="/team">Team</nuxt-link>
             <nuxt-link class=" text-white" to="/devlogs">Contact Us</nuxt-link>
         </div>
 
@@ -27,7 +27,7 @@
 
         <div v-if="showMenuMobile" @click="closeMenuMobile" class=" col-span-3 grid justify-items-center gap-y-3 mt-5 bg-gray-800 w-full">
             <nuxt-link class=" text-white" to="/devlogs">Devlogs</nuxt-link>
-            <nuxt-link class=" text-white" to="/devlogs">Team</nuxt-link>
+            <nuxt-link class=" text-white" to="/team">Team</nuxt-link>
             <nuxt-link class=" text-white" to="/devlogs">Contact Us</nuxt-link>
         </div>
     </div>
