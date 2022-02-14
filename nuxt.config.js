@@ -41,8 +41,24 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/i18n'
   ],
+
+  i18n: {
+    defaultLocale: 'en',
+    locales: [
+      {
+        code: 'en',
+        file: 'en-US.js'
+      },
+      {
+        code: 'es',
+        file: 'es-ES.js'
+      },
+    ],
+    langDir: 'lang/',
+  },
 
 
   auth: {
@@ -52,7 +68,7 @@ export default {
         codeChallengeMethod: '',
         responseType: "id_token token",
         endpoints: {
-          token: 'http://127.0.0.1:8000/api/sociallogin/google', // somm backend url to resolve your auth with google and give you the token back // the endpoint to get the user info after you recived the token 
+          token: 'http://127.0.0.1:8000/api/sociallogin/google', // somm backend url to resolve your auth with google and give you the token back // the endpoint to get the user info after you recived the token
         },
       },
     }
