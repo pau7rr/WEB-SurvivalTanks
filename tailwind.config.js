@@ -12,6 +12,9 @@ module.exports = {
           '150': '40rem',
           '172': '50rem',
         },
+        backgroundImage: {
+          'semi-pattern': "url('/images/devlog_bg.png')",
+        }
       }
     }
   }

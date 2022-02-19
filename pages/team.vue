@@ -34,7 +34,7 @@
                 <div class="text-center mt-6">
                   <!-- Name -->
                   <h1 class="text-gray-900 text-xl font-bold mb-1">
-                    Dani Honrado
+                    Dani Hornillo
                   </h1>
 
                   <!-- Title -->
@@ -77,7 +77,7 @@
                 <div class="text-center mt-6">
                   <!-- Name -->
                   <h1 class="text-gray-900 text-xl font-bold mb-1">
-                    Pau Rosquellas
+                    Pau Rosquillas
                   </h1>
 
                   <!-- Title -->
@@ -120,7 +120,7 @@
                 <div class="text-center mt-6">
                   <!-- Name -->
                   <h1 class="text-gray-900 text-xl font-bold mb-1">
-                    Alejandro Garcia
+                    Alejandro Gracias
                   </h1>
 
                   <!-- Title -->
@@ -163,7 +163,7 @@
                 <div class="text-center mt-6">
                   <!-- Name -->
                   <h1 class="text-gray-900 text-xl font-bold mb-1">
-                    David Massip
+                    David Masip
                   </h1>
 
                   <!-- Title -->
