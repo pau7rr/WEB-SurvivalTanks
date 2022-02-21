@@ -1,6 +1,6 @@
 <template>
   <div>
-      {{devlog}}
+      {{devs  }}
   </div>
 </template>
 
@@ -10,20 +10,23 @@
         if (localStorage.getItem('jwt')) {
             return 'logged'
         }
-            return 'default' 
+            return 'default'
         },
         async asyncData({store, params}) {
             await store.dispatch('devlogs/dispatch')
-            return { slug: params.slug }
+            const devs = store.getters['devlogs/bySlug'](params.slug)
+            return {
+              slug: params.slug,
+              devs
+            }
         },
         data: () => {
             return {
-                slug: '',
             }
         },
         computed: {
-            devlog() {
-                return this.$store.getters['devlogs/bySlug'](this.slug)
+             devlog() {
+              return this.$store.getters['devlogs/bySlug'](this.slug)
             }
         },
     };

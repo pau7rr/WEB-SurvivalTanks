@@ -8,29 +8,29 @@
         </nuxt-link>
 
         <div class=" hidden md:flex gap-x-5">
-            <nuxt-link class=" text-white" to="/devlogs">{{ $t('header.devlogs') }}</nuxt-link>
-            <nuxt-link class=" text-white" to="/team">{{ $t('header.team') }}</nuxt-link>
+            <nuxt-link class=" text-white" :to="localePath('/devlogs')">{{ $t('header.devlogs') }}</nuxt-link>
+            <nuxt-link class=" text-white" :to="localePath('/team')">{{ $t('header.team') }}</nuxt-link>
             <nuxt-link class=" text-white" to="/devlogs">{{ $t('header.contact_us') }}</nuxt-link>
+            <nuxt-link class=" hidden md:inline text-white" :to="switchLocalePath('es')"> <img src="/icons/language.svg" alt="language"> </nuxt-link>
         </div>
 
-        <div class=" flex gap-x-4 ">
+      <div class=" flex gap-x-4 ">
             <nuxt-link to="/my-tank">
                 <div class=" flex gap-x-4">
                     <img class=" self-center w-14 h-14 rounded-full border-2" src="/icons/profile.png" alt="profile">
                     <p class=" hidden md:inline self-center text-white">{{user.username}}</p>
                 </div>
             </nuxt-link>
-            <button class=" hidden md:inline text-white" @click="logout">{{ $t('header.log_out') }}</button>
-        </div>
 
+          <button class=" hidden md:inline text-white" @click="logout">{{ $t('header.log_out') }}</button>
+        </div>
         <button class=" justify-self-end mr-6 md:hidden" @click="showMenuMobile = !showMenuMobile"><img src="/icons/more.svg"></button>
-
         <div v-if="showMenuMobile" @click="closeMenuMobile" class=" col-span-3 grid justify-items-center gap-y-3 mt-5 bg-gray-800 w-full">
-            <nuxt-link class=" text-white" to="/devlogs">{{ $t('header.devlogs') }}</nuxt-link>
-            <nuxt-link class=" text-white" to="/team">{{ $t('header.team') }}</nuxt-link>
-            <nuxt-link class=" text-white" to="/devlogs">{{ $t('header.contact_us') }}</nuxt-link>
-        </div>
-    </div>
+              <nuxt-link class=" text-white" to="/devlogs">{{ $t('header.devlogs') }}</nuxt-link>
+              <nuxt-link class=" text-white" to="/team">{{ $t('header.team') }}</nuxt-link>
+              <nuxt-link class=" text-white" to="/devlogs">{{ $t('header.contact_us') }}</nuxt-link>
+          </div>
+      </div>
 </div>
 </template>
 
