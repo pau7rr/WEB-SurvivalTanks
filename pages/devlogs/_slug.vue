@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col content-center bg-gray-900 bg-semi-pattern">
-        <img class="mx-auto my-8 w-3/5 drop-shadow-md" style="filter: drop-shadow(20px 20px 2px rgba(0,0,0,0.4));" src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blog/hero/codm/CODM-S2-2022-ANNOUNCEMENT-TOUT.jpg" />
+  <div class="flex flex-col content-center bg-gray-900 bg-semi-pattern w-full h-full z-50 bg-cover">
+        <img class="mx-auto my-8 w-3/5 drop-shadow-md" style="filter: drop-shadow(20px 20px 2px rgba(0,0,0,0.4));" :src='devlog.image_url' />
       <div class="mx-auto my-8 grid grid-cols-11">
           <div class="col-span-2"></div>
         <div class="text-sky-brown col-span-6 text-5xl pr-8">{{devlog.summary}}</div>
@@ -43,4 +43,7 @@
         },
     };
     </script>
+    <style scoped>
+    
+    </style>
 
