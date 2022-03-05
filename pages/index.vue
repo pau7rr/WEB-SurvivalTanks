@@ -3,6 +3,7 @@
     <video-trailer/>
     <game-description/>
     <banner-tanks/>
+    <
 </section>
 </template>
 
