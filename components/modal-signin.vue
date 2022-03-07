@@ -105,12 +105,12 @@
                 placeholder="Your password"
                 v-model="form.password"
               />
-              <!-- <a
+              <nuxt-link
               class="inline-block align-baseline text-sm text-gray-600 hover:text-gray-800"
-              href="/forgot"
+              to="/reset-password"
             >
               Forgot Password?
-            </a> -->
+            </nuxt-link> 
             <alert-danger v-if="failed" text="Wrong credentials!"></alert-danger>
             </div>
             <div class="flex justify-between w-full mt-8">
