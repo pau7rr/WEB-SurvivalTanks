@@ -81,6 +81,30 @@ export const actions = {
       .catch(function(err) {
         console.error(err);
       });
+  },
+  
+  async sumCoins({commit, state, dispatch}, {prize}) {
+
+    fetch(process.env.API_BASE_URL + 'api/user/addCoins', {
+      method: 'PUT',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('jwt')
+      },
+      body: JSON.stringify({coins: prize}),
+    })
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(data) {
+        const parseData = JSON.parse(data)
+        commit('addCoins', parseData.coins)
+
+      })
+      .catch(function(err) {
+        console.error(err);
+      });
   }
 
 }

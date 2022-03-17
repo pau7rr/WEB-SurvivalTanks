@@ -1,5 +1,6 @@
 <template>
 <section class=" w-full flex flex-col">
+    <coins-field :coins="coins"/>
 <div class="mt-12 flex m-auto gap-x-1">
   <slot-machine
         :list="list"
@@ -37,7 +38,17 @@
 
 <script>
 export default {
-data() {
+    middleware: 'checkLogin',
+    layout () {
+        if (localStorage.getItem('jwt')) {
+            return 'logged'
+        }
+        return 'default'
+    },
+    async asyncData({store}) {
+        await store.dispatch('coins/dispatch')
+    },
+    data() {
         return {
             list: [
                 {text: "1", color: "#FF6666", id: 1},
@@ -54,10 +65,15 @@ data() {
             trigger: null,
             result: [0,0,0,0],
             buttonEnabled: true,
+            prize: 0,
         };
+    },
+    computed: {
+        coins() { return this.$store.state.coins.coins },
     },
     methods: {
         start() { 
+            this.spin(5)
             this.buttonEnabled = false
             this.trigger = new Date();
         },
@@ -82,12 +98,47 @@ data() {
             if (this.result.includes(0)) { 
                 return
             }
-            console.log(this.result);    
+            this.getPrize(this.result)
             this.buttonEnabled = true
             this.result = [0,0,0,0]
         },
         getPrize(result) {
             
+            let repetidos = {};
+
+            result.forEach(function(numero){
+                repetidos[numero] = (repetidos[numero] || 0) + 1;
+            });
+
+            for(const [key, value] of Object.entries(repetidos)){
+
+                if (value === 2) {
+                    console.log('2 -', key)
+                    this.prize = key * 2
+                    this.sumCoins()
+                }
+                
+                if (value === 3) {
+                    console.log('3 -', key)
+                    this.prize = key * 5
+                    this.sumCoins()
+                }
+                
+                if (value === 4) {
+                    console.log('4 -', key)
+                    this.prize = (key + key) * 25
+                    this.sumCoins()
+                }
+            }
+
+        },
+        async spin(price) {
+            await this.$store.dispatch('coins/buyItem', {price})
+        },
+        async sumCoins() {
+            const prize = this.prize 
+            await this.$store.dispatch('coins/sumCoins', {prize})
+            this.prize = 0
         }
     }
 }
