@@ -120,7 +120,7 @@ export default {
                 
                 if (value === 3) {
                     console.log('3 -', key)
-                    this.prize = key * 5
+                    this.prize = key * 4
                     this.sumCoins()
                 }
                 

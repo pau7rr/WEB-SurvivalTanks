@@ -7,9 +7,9 @@
       <tank-stats :stat="userTank.speed" text="Speed"/>
     </div>
     <div class="grid grid-cols-1 md:flex md:justify-center gap-x-24 mt-20">
-      <buy-stats-component price="10" type="strength" @buy="buy"/>
-      <buy-stats-component price="15" type="health" @buy="buy"/>
-      <buy-stats-component price="20" type="speed" @buy="buy"/>
+      <buy-stats-component price="20" type="strength" @buy="buy"/>
+      <buy-stats-component price="30" type="health" @buy="buy"/>
+      <buy-stats-component price="60" type="speed" @buy="buy"/>
     </div>
   </section>
 </template>
