@@ -73,6 +73,9 @@ export default {
     },
     methods: {
         start() { 
+            if (Number(this.coins) < 5) {
+                return                
+            }
             this.spin(5)
             this.buttonEnabled = false
             this.trigger = new Date();
