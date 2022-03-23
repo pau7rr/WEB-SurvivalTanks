@@ -86,7 +86,7 @@ export const actions = {
   async sumCoins({commit, state, dispatch}, {prize}) {
 
     fetch(process.env.API_BASE_URL + 'api/user/addCoins', {
-      method: 'PUT',
+      method: 'POST',
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
