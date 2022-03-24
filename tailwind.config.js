@@ -26,5 +26,6 @@ module.exports = {
           '8': '8px',
         }
       }
+      
     }
   }
