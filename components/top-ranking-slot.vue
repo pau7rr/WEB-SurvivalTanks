@@ -8,8 +8,17 @@
       }"
   >
       <div class="flex flex-col">
-        <avatar class="m-auto" :username="username"></avatar>
-        <p class=" m-auto text-sky-brown text-3xl">{{round}}</p>
+        <avatar class="m-auto" 
+            :class="{
+                'border-2 border-yellow-300': position === 0,
+                'border-2 border-gray-300': position === 1,
+                'border-2 border-yellow-800': position === 2,
+            }" 
+        :username="username"></avatar>
+        <div class="flex flex-col mb-2 text-white">
+            <p class=" mx-auto">{{round}}</p>
+            <p class=" mx-auto text-xs">Round</p>
+        </div>
       </div>
 
       <div class=" w-full flex flex-col col-span-2 justify-between">

@@ -1,7 +1,6 @@
 <template>
-  <section class="flex flex-col">
-        <h1 class="title text-4xl font-bold mt-5 mx-auto mb-10">Highest Round</h1>
-        <section class="md:flex justify-center gap-x-5">
+  <section class="flex flex-col w-full h-full bg-kristal bg-cover">
+        <section class="md:flex justify-center gap-x-5 mt-10">
             <section v-for="(user, index) in topRankingList" :key="user.username">
                 <top-ranking-slot :username="user.username" :round="user.highest_round" :games="user.games_played" :position="index"/>
             </section>       
