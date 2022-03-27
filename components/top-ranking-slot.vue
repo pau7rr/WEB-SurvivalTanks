@@ -8,7 +8,7 @@
       }"
   >
       <div class="flex flex-col">
-        <img class=" m-auto w-14 h-14 rounded-full border-2" src="/icons/profile.png" alt="profile">
+        <avatar class="m-auto" :username="username"></avatar>
         <p class=" m-auto text-sky-brown text-3xl">{{round}}</p>
       </div>
 
@@ -23,13 +23,18 @@
 </template>
 
 <script>
+import Avatar from 'vue-avatar'
+
 export default {
+    components: {
+     Avatar
+    },
     props: {
         username: String,
         round: Number,
         position: Number,
         games: Number
-    }
+    },
 }
 </script>
 

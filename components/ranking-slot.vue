@@ -1,8 +1,8 @@
 <template>
   <div class="h-20 w-3/4 bg-gray-800 rounded-lg grid grid-cols-5">
-    <div class="flex justify-center gap-x-6">
-        <img class=" my-auto w-14 h-14 rounded-full border-2" src="/icons/profile.png" alt="profile">
-        <p class=" my-auto text-white text-2xl">{{username}}</p>
+    <div class="flex">
+        <avatar class=" my-auto ml-7" :username="username"></avatar>
+        <p class=" my-auto ml-4 text-white text-2xl">{{username}}</p>
     </div>
     <div class="flex flex-col my-auto text-white">
         <p class=" mx-auto">{{games}}</p>
@@ -24,7 +24,12 @@
 </template>
 
 <script>
+import Avatar from 'vue-avatar'
+
 export default {
+    components: {
+     Avatar
+    },
      props: {
         username: String,
         round: Number,

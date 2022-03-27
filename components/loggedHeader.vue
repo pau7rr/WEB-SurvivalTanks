@@ -16,7 +16,7 @@
         <div class=" flex gap-x-4 ">
             <nuxt-link to="/my-tank">
                 <div class=" flex gap-x-4">
-                    <img class=" self-center w-14 h-14 rounded-full border-2" src="/icons/profile.png" alt="profile">
+                    <avatar class="self-center border-2" :username="user.username"></avatar>
                     <p class=" hidden md:inline self-center text-white">{{user.username}}</p>
                 </div>
             </nuxt-link>
@@ -35,7 +35,12 @@
 </template>
 
 <script>
+import Avatar from 'vue-avatar'
+
 export default {
+    components: {
+     Avatar
+    },
     data: () => {
         return {
             showMenuMobile: false,

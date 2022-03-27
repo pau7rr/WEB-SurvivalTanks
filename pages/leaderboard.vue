@@ -15,6 +15,7 @@
 </template>
 
 <script>
+
 export default {
     layout () {
         if (localStorage.getItem('jwt')) {
