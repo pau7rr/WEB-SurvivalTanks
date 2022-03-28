@@ -1,21 +1,16 @@
 <template>
-  <div class="flex items-center justify-center min-h-screen bg-white">
+  <div class="flex justify-center mt-12 min-h-screen bg-white">
     <div class="flex flex-col">
       <div class="flex flex-col">
         <!-- Meet the Team -->
         <div class="container max-w-7xl px-4">
           <!-- Section Header -->
-          <div class="flex flex-wrap justify-center text-center mb-24">
+          <div class="flex flex-wrap justify-center text-center mb-5">
             <div class="w-full lg:w-6/12 px-4">
               <!-- Header -->
-              <h1 class="text-gray-900 text-4xl font-bold mb-8">
+              <h1 class="text-gray-900 text-4xl font-bold mb-5">
                 Meet the Team
               </h1>
-
-              <!-- Description -->
-              <p class="text-gray-700 text-lg font-light">
-                With over 100 years of combined experience, we've got a well-seasoned team at the helm.
-              </p>
             </div>
           </div>
 
@@ -34,7 +29,7 @@
                 <div class="text-center mt-6">
                   <!-- Name -->
                   <h1 class="text-gray-900 text-xl font-bold mb-1">
-                    Dani Hornillo
+                    Dani Honrado
                   </h1>
 
                   <!-- Title -->
@@ -77,7 +72,7 @@
                 <div class="text-center mt-6">
                   <!-- Name -->
                   <h1 class="text-gray-900 text-xl font-bold mb-1">
-                    Pau Rosquillas
+                    Pau Rosquellas
                   </h1>
 
                   <!-- Title -->
@@ -120,7 +115,7 @@
                 <div class="text-center mt-6">
                   <!-- Name -->
                   <h1 class="text-gray-900 text-xl font-bold mb-1">
-                    Alejandro Gracias
+                    Alejandro Garcia
                   </h1>
 
                   <!-- Title -->
