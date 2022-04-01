@@ -1,6 +1,13 @@
 <template>
-  <section>
+  <section class=" bg-kristal bg-cover">
     <coins-field :coins="coins"/>
+    <section class="mt-10 flex justify-center gap-x-6">
+      <buy-item/>
+      <buy-item/>
+      <buy-item/>
+      <buy-item/>
+      <buy-item/>
+    </section>
     <div class="grid grid-cols-1 md:flex md:justify-center gap-x-24 mt-20">
       <tank-stats :stat="userTank.strength" text="Strength"/>
       <tank-stats :stat="userTank.health" text="Health"/>
