@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[25],{384:function(e,t,n){"use strict";n.r(t);var l={middleware:"checkLogin",layout:function(){return localStorage.getItem("jwt")?"logged":"default"}},o=n(18),component=Object(o.a)(l,(function(){var e=this.$createElement;return(this._self._c||e)("section")}),[],!1,null,null,null);t.default=component.exports}}]);
