@@ -22,6 +22,12 @@ export const mutations = {
     setSpeed(state, speed) {
       state.userTank.speed = speed
     },
+    setBombs(state, bombs) {
+      state.userTank.bombs = bombs
+    },
+    setRegen(state, regen) {
+      state.userTank.regeneration = regen
+    },
     setLoaded(state) {
         state.isLoaded = true
     },
@@ -53,6 +59,8 @@ export const actions = {
                 strength: res.strengh,
                 health: res.health,
                 speed: res.speed,
+                bombs: res.bombs,
+                regeneration: res.regeneration,
                 tower: res.tower,
                 body: res.body,
                 track: res.track,
@@ -137,6 +145,56 @@ export const actions = {
 
           const res = JSON.parse(data)
           commit('setSpeed', res.speed)
+
+        })
+        .catch(function(err) {
+          console.error(err);
+        });
+    },
+
+    async sumBombs({store, commit}){
+
+      const options = {
+        method: 'PUT',
+        headers:{
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('jwt')
+        }
+      }
+
+      await fetch(process.env.API_BASE_URL + 'api/sumBombs', options)
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(data) {
+
+          const res = JSON.parse(data)
+          commit('setBombs', res.bombs)
+
+        })
+        .catch(function(err) {
+          console.error(err);
+        });
+    },
+
+    async sumRegen({store, commit}){
+
+      const options = {
+        method: 'PUT',
+        headers:{
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('jwt')
+        }
+      }
+
+      await fetch(process.env.API_BASE_URL + 'api/sumRegen', options)
+        .then(function(response) {
+          return response.text();
+        })
+        .then(function(data) {
+
+          const res = JSON.parse(data)
+          commit('setRegen', res.regeneration)
 
         })
         .catch(function(err) {

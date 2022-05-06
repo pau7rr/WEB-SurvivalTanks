@@ -76,6 +76,14 @@ export const actions = {
         if (type === 'speed') {
           dispatch('userTank/sumSpeed', null, { root: true })
         }
+        
+        if (type === 'bombs') {
+          dispatch('userTank/sumBombs', null, { root: true })
+        }
+        
+        if (type === 'regen') {
+          dispatch('userTank/sumRegen', null, { root: true })
+        }
 
       })
       .catch(function(err) {

@@ -50,7 +50,6 @@ export default {
 
 <style scoped>
 
-  @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 
 *{
@@ -74,7 +73,6 @@ export default {
 .title {
   font-family: 'Lilita One', cursive;
   text-shadow: 2px 0 0 rgb(0, 0, 0), -2px 0 0 rgb(0, 0, 0), 0 2px 0 rgb(0, 0, 0), 0 -2px 0 rgb(0, 0, 0), 1px 1px rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0);
-
 }
 
 .buyText {

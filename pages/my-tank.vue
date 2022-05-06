@@ -5,8 +5,8 @@
       <buy-item title="Strength" type="strength" price="20" :stat="userTank.strength" icon="/icons/strength.png" @buy="buy"/>
       <buy-item title="Health" type="health" price="30" :stat="userTank.health" icon="/icons/heal2.png" @buy="buy"/>
       <buy-item title="Speed" type="speed" price="60" :stat="userTank.speed"  icon="/icons/speed.png" @buy="buy"/>
-      <buy-item title="Bombs" type="bombs" price="50" :stat=5 icon="/icons/bomb.png" @buy="buy"/>
-      <buy-item title="Regen" type="regen" price="100" :stat=100 icon="/icons/plus.png" @buy="buy"/>
+      <buy-item title="Bombs" type="bombs" price="50" :stat="userTank.bombs" icon="/icons/bomb.png" @buy="buy"/>
+      <buy-item title="Regen" type="regen" price="100" :stat="userTank.regeneration" icon="/icons/plus.png" @buy="buy"/>
     </section>
   </section>
 </template>
