@@ -111,7 +111,7 @@
             >
               Forgot Password?
             </nuxt-link> 
-            <alert-danger v-if="failed" text="Wrong credentials!"></alert-danger>
+            <alert-danger v-if="failed" :text="errorMsg"></alert-danger>
             </div>
             <div class="flex justify-between w-full mt-8">
               <button
@@ -150,6 +150,12 @@ export default {
         password: '',
       },
       failed: false,
+    }
+  },
+  computed: {
+    errorMsg() {
+      console.log(this.$store.state.user);
+      return this.$store.state.user.errorMessage
     }
   },
   methods: {
