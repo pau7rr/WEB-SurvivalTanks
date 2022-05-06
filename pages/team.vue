@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-center mt-12 min-h-screen bg-white">
-    <div class="flex flex-col">
+  <div class="flex justify-center min-h-screen bg-kristal">
+    <div class="flex flex-col mt-6">
       <div class="flex flex-col">
         <!-- Meet the Team -->
         <div class="container max-w-7xl px-4">
