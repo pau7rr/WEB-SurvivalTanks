@@ -1,6 +1,6 @@
 <template>
-    <section>
-        <div class=" mt-10" v-for="devlog in devlogs" :key="devlog.id">
+    <section class=" bg-kristal flex flex-col gap-y-8">
+        <div v-for="devlog in devlogs" :key="devlog.id">
             <devlog-card :slug="devlog.slug" :version="devlog.version" :title="devlog.title" :summary="devlog.summary" :thumbnail="devlog.thumbnail_url" />
         </div>
     </section>
