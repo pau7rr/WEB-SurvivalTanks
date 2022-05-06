@@ -1,16 +1,13 @@
 <template>
-  <section>
+  <section class=" bg-kristal bg-cover">
     <coins-field :coins="coins"/>
-    <div class="grid grid-cols-1 md:flex md:justify-center gap-x-24 mt-20">
-      <tank-stats :stat="userTank.strength" text="Strength"/>
-      <tank-stats :stat="userTank.health" text="Health"/>
-      <tank-stats :stat="userTank.speed" text="Speed"/>
-    </div>
-    <div class="grid grid-cols-1 md:flex md:justify-center gap-x-24 mt-20">
-      <buy-stats-component price="20" type="strength" @buy="buy"/>
-      <buy-stats-component price="30" type="health" @buy="buy"/>
-      <buy-stats-component price="60" type="speed" @buy="buy"/>
-    </div>
+    <section class="mt-10 flex justify-center gap-x-6">
+      <buy-item title="Strength" type="strength" price="20" :stat="userTank.strength" icon="/icons/strength.png" @buy="buy"/>
+      <buy-item title="Health" type="health" price="30" :stat="userTank.health" icon="/icons/heal2.png" @buy="buy"/>
+      <buy-item title="Speed" type="speed" price="60" :stat="userTank.speed"  icon="/icons/speed.png" @buy="buy"/>
+      <buy-item title="Bombs" type="bombs" price="50" :stat="userTank.bombs" icon="/icons/bomb.png" @buy="buy"/>
+      <buy-item title="Regen" type="regen" price="100" :stat="userTank.regeneration" icon="/icons/plus.png" @buy="buy"/>
+    </section>
   </section>
 </template>
 
