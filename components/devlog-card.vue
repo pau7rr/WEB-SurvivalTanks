@@ -9,7 +9,7 @@
       <nuxt-link
         class="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
         :key="slug"
-        :to="`devlogs/${slug}`"  
+        :to="localePath(`devlogs/${slug}`)"  
       > {{title}}</nuxt-link>
       <p class="mt-2 text-slate-500">{{ summary }}</p>
     </div>

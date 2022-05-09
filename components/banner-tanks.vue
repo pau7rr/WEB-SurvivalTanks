@@ -1,6 +1,6 @@
 <template>
   <section class="w-full h-60 bg-gray-600 flex flex-col">
-    <p class="text-white text-3xl mx-auto mt-6">A lot of combinations!</p>
+    <p class="text-white text-3xl mx-auto mt-6">{{ $t('banner.title') }}</p>
     <section class="w-full flex justify-evenly my-auto px-7">
       <img class="w-32 h-32" src="/images/HeavyHullA.png" alt="heavyA">
       <img class="w-32 h-32" src="/images/HeavyHullB.png" alt="heavyB">

@@ -6,19 +6,19 @@
     </div>
     <div class="flex flex-col my-auto text-white">
         <p class=" mx-auto">{{games}}</p>
-        <p class=" mx-auto text-xs">Games played</p>
+        <p class=" mx-auto text-xs"> {{ $t('ranking.games') }} </p>
     </div>
     <div class="flex flex-col my-auto text-white">
         <p class=" mx-auto">{{kills}}</p>
-        <p class=" mx-auto text-xs">Kills</p>
+        <p class=" mx-auto text-xs">{{ $t('ranking.kills') }}</p>
     </div>
     <div class="flex flex-col my-auto text-white">
         <p class=" mx-auto">{{round}}</p>
-        <p class=" mx-auto text-xs">Highest round</p>
+        <p class=" mx-auto text-xs">{{ $t('ranking.hround') }}</p>
     </div>
     <div class="flex flex-col my-auto text-white">
         <p class=" mx-auto">{{position + 4}}</p>
-        <p class=" mx-auto text-xs">Ranking</p>
+        <p class=" mx-auto text-xs">{{ $t('ranking.ranking') }}</p>
     </div>
   </div>
 </template>

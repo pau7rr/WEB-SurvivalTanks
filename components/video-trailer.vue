@@ -4,10 +4,10 @@
                 <source src="/videos/gameplay1.mp4" type="video/mp4">
             </video>
             <div class=" relative text-white top-6 md:top-36 lg:top-72 text-center">
-                <h1 class="videoTitle text-4xl md:text-7xl text-sky-brown">PLAY OUR GAME</h1>
-                <p class="videoSub text-lg md:text-3xl pt-4">Best tank game of 2022</p>
+                <h1 class="videoTitle text-4xl md:text-7xl text-sky-brown">{{ $t('trailer.title') }}</h1>
+                <p class="videoSub text-lg md:text-3xl pt-4">{{ $t('trailer.subtitle') }}</p>
                 <button @click="download" class="playButton mt-10 bg-sky-brown py-3 px-8 text-gray-800 font-semibold">
-                    DOWNLOAD GAME
+                    {{ $t('trailer.button') }}
                 </button>
             </div>
     </section>

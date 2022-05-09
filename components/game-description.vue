@@ -2,19 +2,19 @@
   <section class="modeDescription bg-gray-900">
       <section class=" grid grid-cols-1 md:grid-cols-2">
         <div class=" p-12">
-          <p class=" text-sky-brown font-bold text-4xl">Just play right now!</p>
+          <p class=" text-sky-brown font-bold text-4xl">{{ $t('description.title') }}</p>
 
-          <p class=" text-sky-brown text-2xl mt-10"> Survival Mode </p>
-          <p class=" text-white text-lg mt-4 "> Very fun survival game mode. </p>
+          <p class=" text-sky-brown text-2xl mt-10"> {{ $t('description.attribute1') }} </p>
+          <p class=" text-white text-lg mt-4 "> {{ $t('description.description1') }} </p>
 
-          <p class=" text-sky-brown text-2xl mt-10"> Multiplayer Mode </p>
-          <p class=" text-white text-lg mt-4 "> New multiplayer game mode made for the players who love PVP. </p>
+          <p class=" text-sky-brown text-2xl mt-10"> {{ $t('description.attribute2') }} </p>
+          <p class=" text-white text-lg mt-4 "> {{ $t('description.description2') }} </p>
 
-          <p class=" text-sky-brown text-2xl mt-10"> Level Up your own Tank </p>
-          <p class=" text-white text-lg mt-4 "> Buy and improve your stats in our shop. </p>
+          <p class=" text-sky-brown text-2xl mt-10"> {{ $t('description.attribute3') }} </p>
+          <p class=" text-white text-lg mt-4 "> {{ $t('description.description3') }} </p>
 
           <button class="playButton mt-10 bg-sky-brown py-3 px-8 text-gray-800 font-semibold">
-                    SIGN UP
+                    {{ $t('description.button') }}
           </button>
 
         </div>

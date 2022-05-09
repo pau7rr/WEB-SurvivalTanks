@@ -2,11 +2,11 @@
   <section class=" bg-kristal bg-cover">
     <coins-field :coins="coins"/>
     <section class="mt-10 flex justify-center gap-x-6">
-      <buy-item title="Strength" type="strength" price="20" :stat="userTank.strength" icon="/icons/strength.png" @buy="buy"/>
-      <buy-item title="Health" type="health" price="30" :stat="userTank.health" icon="/icons/heal2.png" @buy="buy"/>
-      <buy-item title="Speed" type="speed" price="60" :stat="userTank.speed"  icon="/icons/speed.png" @buy="buy"/>
-      <buy-item title="Bombs" type="bombs" price="30" :stat="userTank.bombs" icon="/icons/bomb.png" @buy="buy"/>
-      <buy-item title="Regen" type="regen" price="100" :stat="userTank.regeneration" icon="/icons/plus.png" @buy="buy"/>
+      <buy-item :title="$t('store.strength')" type="strength" price="20" :stat="userTank.strength" icon="/icons/strength.png" @buy="buy"/>
+      <buy-item :title="$t('store.health')" type="health" price="30" :stat="userTank.health" icon="/icons/heal2.png" @buy="buy"/>
+      <buy-item :title="$t('store.speed')" type="speed" price="60" :stat="userTank.speed"  icon="/icons/speed.png" @buy="buy"/>
+      <buy-item :title="$t('store.bombs')" type="bombs" price="30" :stat="userTank.bombs" icon="/icons/bomb.png" @buy="buy"/>
+      <buy-item :title="$t('store.regen')" type="regen" price="100" :stat="userTank.regeneration" icon="/icons/plus.png" @buy="buy"/>
     </section>
   </section>
 </template>

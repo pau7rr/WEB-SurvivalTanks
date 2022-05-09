@@ -28,20 +28,20 @@ export default {
   computed: {
     itemColor() {
       return {
-        'strength': this.title === 'Strength',
-        'speed': this.title === 'Speed',
-        'health': this.title === 'Health',
-        'bombs': this.title === 'Bombs',
-        'regen': this.title === 'Regen',
+        'strength': this.type === 'strength',
+        'speed': this.type === 'speed',
+        'health': this.type === 'health',
+        'bombs': this.type === 'bombs',
+        'regen': this.type === 'regen',
       }
     },
     separatorColor() {
       return {
-        'strengthSeparator': this.title === 'Strength',
-        'speedSeparator': this.title === 'Speed',
-        'healthSeparator': this.title === 'Health',
-        'bombsSeparator': this.title === 'Bombs',
-        'regenSeparator': this.title === 'Regen',
+        'strengthSeparator': this.type === 'strength',
+        'speedSeparator': this.type === 'speed',
+        'healthSeparator': this.type === 'health',
+        'bombsSeparator': this.type === 'bombs',
+        'regenSeparator': this.type === 'regen',
       }
     }
   }
