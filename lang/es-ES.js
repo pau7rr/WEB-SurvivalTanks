@@ -31,6 +31,13 @@ export default {
         health: 'Vida',
         speed: 'Velocidad',
         bombs: 'Bombas',
-        regen: 'Regeneracion'
+        regen: 'Regeneración'
     },
+    ranking: {
+        round: 'Ronda',
+        games: 'Partidas jugadas',
+        kills: 'Muertes',
+        hround: 'Ronda más alta',
+        ranking: 'Ranking'
+      }
 }

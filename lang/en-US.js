@@ -33,4 +33,11 @@ export default {
       bombs: 'Bombs',
       regen: 'Regen'
     },
+    ranking: {
+      round: 'Round',
+      games: 'Games played',
+      kills: 'Kills',
+      hround: 'Highest round',
+      ranking: 'Ranking'
+    }
 }

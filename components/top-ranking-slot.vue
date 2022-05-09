@@ -17,7 +17,7 @@
         :username="username"></avatar>
         <div class="flex flex-col mb-2 text-white">
             <p class=" mx-auto">{{round}}</p>
-            <p class=" mx-auto text-xs">Round</p>
+            <p class=" mx-auto text-xs">{{ $t('ranking.round') }}</p>
         </div>
       </div>
 
@@ -25,7 +25,7 @@
         <p class=" mx-auto mt-5 text-white text-2xl">{{username}}</p>
         <div class="flex flex-col mb-2 text-white">
             <p class=" mx-auto">{{games}}</p>
-            <p class=" mx-auto text-xs">Games played</p>
+            <p class=" mx-auto text-xs">{{ $t('ranking.games') }}</p>
         </div>
       </div>
   </div>
