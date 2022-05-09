@@ -14,6 +14,7 @@ module.exports = {
         },
         backgroundImage: {
           'semi-pattern': "url('/images/devlog_bg.png')",
+          'kristal': "url('/images/kristalbg.png')",
         },
         borderWidth: {
           DEFAULT: '1px',

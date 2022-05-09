@@ -10,13 +10,13 @@
         <div class=" hidden md:flex gap-x-5">
             <nuxt-link class=" text-white" to="/devlogs">Devlogs</nuxt-link>
             <nuxt-link class=" text-white" to="/team">Team</nuxt-link>
-            <nuxt-link class=" text-white" to="/devlogs">Contact Us</nuxt-link>
+            <nuxt-link class=" text-white" to="/leaderboard">Leaderboard</nuxt-link>
         </div>
 
         <div class=" flex gap-x-4 ">
             <nuxt-link to="/my-tank">
                 <div class=" flex gap-x-4">
-                    <img class=" self-center w-14 h-14 rounded-full border-2" src="/icons/profile.png" alt="profile">
+                    <avatar class="self-center border-2" :username="user.username"></avatar>
                     <p class=" hidden md:inline self-center text-white">{{user.username}}</p>
                 </div>
             </nuxt-link>
@@ -28,14 +28,19 @@
         <div v-if="showMenuMobile" @click="closeMenuMobile" class=" col-span-3 grid justify-items-center gap-y-3 mt-5 bg-gray-800 w-full">
             <nuxt-link class=" text-white" to="/devlogs">Devlogs</nuxt-link>
             <nuxt-link class=" text-white" to="/team">Team</nuxt-link>
-            <nuxt-link class=" text-white" to="/devlogs">Contact Us</nuxt-link>
+            <nuxt-link class=" text-white" to="/leaderboard">Leaderboard</nuxt-link>
         </div>
     </div>
 </div>
 </template>
 
 <script>
+import Avatar from 'vue-avatar'
+
 export default {
+    components: {
+     Avatar
+    },
     data: () => {
         return {
             showMenuMobile: false,

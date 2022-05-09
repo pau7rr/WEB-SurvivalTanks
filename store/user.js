@@ -3,6 +3,7 @@ export const state = () => ({
         username: '',
         email: '',
     },
+    errorMessage: '',
     isLoaded: false,
 })
   
@@ -19,6 +20,9 @@ export const mutations = {
     },
     setLoaded(state) {
         state.isLoaded = true
+    },
+    setErrorMessage(state, message) {
+        state.errorMessage = message
     },
 }
 
@@ -51,7 +55,7 @@ export const actions = {
 
     },
 
-    async dispatchLogin(context, {email, password}) {
+    async dispatchLogin({commit, state}, {email, password}) {
 
         const options = {
             method: 'POST', 
@@ -75,6 +79,8 @@ export const actions = {
                 location.reload()
                 return
             }
+
+            commit('setErrorMessage', res.message)
 
 
         })
