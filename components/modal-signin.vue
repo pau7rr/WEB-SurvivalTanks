@@ -42,7 +42,7 @@
           <form method="post" action="#" @submit.prevent="login">
             <h1 class="text-2xl font-bold">Sign In to our game!</h1>
             <div  class=" cursor-pointer" @click="$emit('close')">
-              <nuxt-link to="/register">
+              <nuxt-link :to="localePath('/register')">
                 <span class="text-gray-600 text-sm">
                 Don't have an account?
                 </span>
@@ -107,7 +107,7 @@
               />
               <nuxt-link
               class="inline-block align-baseline text-sm text-gray-600 hover:text-gray-800"
-              to="/reset-password"
+              :to="localePath('/reset-password')"
             >
               Forgot Password?
             </nuxt-link> 
