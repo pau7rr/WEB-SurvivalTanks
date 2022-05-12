@@ -40,11 +40,20 @@ export default {
         hround: 'Ronda más alta',
         ranking: 'Ranking'
       },
-      register: {
+    register: {
         title: 'Registrarse al juego',
         username: 'Nombre de usuario',
         email: 'Correo',
         password: 'Contraseña',
         signup: 'Registrarme',
-      },
+    },
+    login: {
+      title: 'Juega a nuestro juego!',
+      account: "No tienes cuenta?",
+      signup: 'Registrarse',
+      email: 'Correo',
+      password: 'Contraseña',
+      forgot: 'Has olvidado la contraseña?',
+      signin: 'Entrar',
+    }
 }

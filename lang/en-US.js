@@ -47,4 +47,13 @@ export default {
       password: 'Password',
       signup: 'Sign Up',
     },
+    login: {
+      title: 'Sign In to our game!',
+      account: "Don't have an account?",
+      signup: 'Sign up',
+      email: 'Email',
+      password: 'Password',
+      forgot: 'Forgot Password?',
+      signin: 'Sign In',
+    }
 }
