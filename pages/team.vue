@@ -34,26 +34,7 @@
 
                   <!-- Title -->
                   <div class="text-gray-700 font-light mb-2">
-                    Team Member
-                  </div>
-
-                  <!-- Social Icons -->
-                  <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                    <!-- Linkedin -->
-                    <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                      <i class="mdi mdi-linkedin text-indigo-500 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Twitter -->
-                    <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                      <i class="mdi mdi-twitter text-blue-300 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Instagram -->
-                    <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                      <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                    </a>
+                    Unity Developer
                   </div>
                 </div>
               </div>
@@ -77,26 +58,7 @@
 
                   <!-- Title -->
                   <div class="text-gray-700 font-light mb-2">
-                    Team Member
-                  </div>
-
-                  <!-- Social Icons -->
-                  <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                    <!-- Linkedin -->
-                    <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                      <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Twitter -->
-                    <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                      <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Instagram -->
-                    <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                      <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                    </a>
+                    Web Developer
                   </div>
                 </div>
               </div>
@@ -120,26 +82,7 @@
 
                   <!-- Title -->
                   <div class="text-gray-700 font-light mb-2">
-                    Team Memeber
-                  </div>
-
-                  <!-- Social Icons -->
-                  <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                    <!-- Linkedin -->
-                    <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                      <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Twitter -->
-                    <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                      <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Instagram -->
-                    <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                      <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                    </a>
+                    Unity Developer
                   </div>
                 </div>
               </div>
@@ -163,26 +106,7 @@
 
                   <!-- Title -->
                   <div class="text-gray-700 font-light mb-2">
-                    Team Member
-                  </div>
-
-                  <!-- Social Icons -->
-                  <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                    <!-- Linkedin -->
-                    <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                      <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Twitter -->
-                    <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                      <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Instagram -->
-                    <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                      <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                    </a>
+                    Web Developer
                   </div>
                 </div>
               </div>
@@ -201,6 +125,9 @@ export default {
       return 'logged'
     }
     return 'default'
+  },
+  async asyncData({store}) {
+    await store.dispatch('imagesTeam/dispatch')
   },
 }
 </script>
