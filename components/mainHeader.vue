@@ -8,9 +8,15 @@
         </nuxt-link>
 
         <div class=" hidden md:flex gap-x-5">
-            <nuxt-link class=" text-white" :to="localePath('/devlogs')">{{ $t('header.devlogs') }}</nuxt-link>
-            <nuxt-link class=" text-white" :to="localePath('/team')">{{ $t('header.team') }}</nuxt-link>
-            <nuxt-link class=" text-white" :to="localePath('/leaderboard')">{{ $t('header.leaderboard') }}</nuxt-link>
+            <nuxt-link class=" text-white self-center" :to="localePath('/devlogs')">{{ $t('header.devlogs') }}</nuxt-link>
+            <nuxt-link class=" text-white self-center" :to="localePath('/team')">{{ $t('header.team') }}</nuxt-link>
+            <nuxt-link class=" text-white self-center" :to="localePath('/leaderboard')">{{ $t('header.leaderboard') }}</nuxt-link>
+            <nuxt-link 
+                v-for="locale in availableLocales"
+                :key="locale.code"
+                :to="switchLocalePath(locale.code)">
+                <img src="/icons/globe.svg" alt="Globe" class=" text-white w-8">
+            </nuxt-link>
         </div>
 
         <button class=" justify-self-end mr-6 text-white" @click="showModal = !showModal">{{ $t('header.play_game') }}</button>
@@ -21,6 +27,12 @@
             <nuxt-link class=" text-white" :to="localePath('/devlogs')">{{ $t('header.devlogs') }}</nuxt-link>
             <nuxt-link class=" text-white" :to="localePath('/team')">{{ $t('header.team') }}</nuxt-link>
             <nuxt-link class=" text-white" :to="localePath('/leaderboard')">{{ $t('header.leaderboard') }}</nuxt-link>
+            <nuxt-link 
+                v-for="locale in availableLocales"
+                :key="locale.code"
+                :to="switchLocalePath(locale.code)">
+                <img src="/icons/globe.svg" alt="Globe" class=" text-white w-8">
+            </nuxt-link>
         </div>
     </div>
 
@@ -46,6 +58,11 @@ export default {
             this.showMenuMobile = false
         },
     },
+    computed: {
+        availableLocales () {
+            return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+        }
+    }
 }
 </script>
 

@@ -8,9 +8,15 @@
         </nuxt-link>
 
         <div class=" hidden md:flex gap-x-5">
-            <nuxt-link class=" text-white" :to="localePath('/devlogs')">{{ $t('header.devlogs') }}</nuxt-link>
-            <nuxt-link class=" text-white" :to="localePath('/team')">{{ $t('header.team') }}</nuxt-link>
-            <nuxt-link class=" text-white" :to="localePath('/leaderboard')">{{ $t('header.leaderboard') }}</nuxt-link>
+            <nuxt-link class=" text-white self-center" :to="localePath('/devlogs')">{{ $t('header.devlogs') }}</nuxt-link>
+            <nuxt-link class=" text-white self-center" :to="localePath('/team')">{{ $t('header.team') }}</nuxt-link>
+            <nuxt-link class=" text-white self-center" :to="localePath('/leaderboard')">{{ $t('header.leaderboard') }}</nuxt-link>
+            <nuxt-link 
+                v-for="locale in availableLocales"
+                :key="locale.code"
+                :to="switchLocalePath(locale.code)">
+                <img src="/icons/globe.svg" alt="Globe" class=" text-white w-8">
+            </nuxt-link>
         </div>
 
         <div class=" flex gap-x-4 ">
@@ -29,6 +35,12 @@
             <nuxt-link class=" text-white" :to="localePath('/devlogs')">{{ $t('header.devlogs') }}</nuxt-link>
             <nuxt-link class=" text-white" :to="localePath('/team')">{{ $t('header.team') }}</nuxt-link>
             <nuxt-link class=" text-white" :to="localePath('/leaderboard')">{{ $t('header.leaderboard') }}</nuxt-link>
+            <nuxt-link 
+                v-for="locale in availableLocales"
+                :key="locale.code"
+                :to="switchLocalePath(locale.code)">
+                <img src="/icons/globe.svg" alt="Globe" class=" text-white w-8">
+            </nuxt-link>
         </div>
     </div>
 </div>
@@ -52,6 +64,9 @@ export default {
             const user = this.$store.getters['user/user']
             return user
         },
+        availableLocales () {
+            return this.$i18n.locales.filter(i => i.code !== this.$i18n.locale)
+        }
     },
      created() {
         this.fetchUser()
