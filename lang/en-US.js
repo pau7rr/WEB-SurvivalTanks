@@ -39,5 +39,12 @@ export default {
       kills: 'Kills',
       hround: 'Highest round',
       ranking: 'Ranking'
-    }
+    },
+    register: {
+      title: 'Sign up to our game',
+      username: 'Username',
+      email: 'Email',
+      password: 'Password',
+      signup: 'Sign Up',
+    },
 }

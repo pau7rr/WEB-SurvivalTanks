@@ -39,5 +39,12 @@ export default {
         kills: 'Muertes',
         hround: 'Ronda más alta',
         ranking: 'Ranking'
-      }
+      },
+      register: {
+        title: 'Registrarse al juego',
+        username: 'Nombre de usuario',
+        email: 'Correo',
+        password: 'Contraseña',
+        signup: 'Registrarme',
+      },
 }
