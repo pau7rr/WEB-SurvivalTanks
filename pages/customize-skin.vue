@@ -1,19 +1,23 @@
 <template>
-    <section>
-        <form @submit.prevent="updateTank">
-            <!-- Editor -->
-            <div class="grid grid-cols-3 gap-3">
+    <section class="w-full h-full bg-kristal pt-20">
+      
+        <!-- Section Header -->
+        <div class="flex flex-wrap justify-center text-center mb-5">
+          <div class="w-full lg:w-6/12 px-4">
+            <!-- Header -->
+            <h1 class="text-gray-900 text-4xl font-bold mb-5">
+              Tank Constructor
+            </h1>
+          </div>
+        </div>
+        <form>
+            <!-- Editor --> 
+            <div class="grid grid-cols-9 gap-3">
                 <!-- Tank Parts -->
-                <div class="col col-md-4 text-center px-2">
+                <div class="col-start-2 col-span-3 text-center px-2">
                     <div class="bg-dark-1 p-2 rounded rounded-5">
-                        <div class="grid grid-rows-4 grid-flow-col gap-4">
-                            <div class="col-md-12 text-center h4 mx-0 mb-3 border-bottom">
-                                Tank Parts
-                            </div>
+                        <div class="row mx-2 p-2">
                             <!-- Tower Swiper -->
-                            <div class="w-100 tex-center bg-dark-1">
-                            Tower Parts
-                            </div>
                             <div id="towerSwiper" class="swiper mySwiper">
                                 <div class="swiper-wrapper">
                                     <img src="/images/tankConstructor/TowerEdits/Light1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
@@ -30,9 +34,6 @@
                                 <div class="swiper-button-prev"></div>
                             </div>
                             <!-- Hull Swiper -->
-                            <div class="w-100 tex-center bg-dark-1">
-                            Body Parts
-                            </div>
                             <div id="hullSwiper" class="swiper mySwiper">
                                 <div class="swiper-wrapper">
                                     <img src="/images/tankConstructor/Hulls/SmallHullA.png"  class="swiper-slide text-center flex flex-column hull-selector-image">
@@ -48,24 +49,7 @@
                                 <div class="swiper-button-prev"></div>
                                 <div class="swiper-button-next"></div>
                             </div>
-                            <!-- Tracks Swiper -->
-                            <div class="w-100 tex-center bg-dark-1">
-                            Track Parts
-                            </div>
-                            <div id="tracksSwiper" class="swiper mySwiper">
-                                <div class="swiper-wrapper">
-                                    <img src="/images/tankConstructor/Tracks/TrackAFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
-                                    <img src="/images/tankConstructor/Tracks/TrackBFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
-                                    <img src="/images/tankConstructor/Tracks/TrackСFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
-                                    <img src="/images/tankConstructor/Tracks/TrackDFrame1.png"  class="swiper-slide text-center flex flex-column tracks-selector-image">
-                                </div>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                            </div>
                             <!-- Bullet Selector -->
-                            <div class="w-100 tex-center bg-dark-1 mb-2">
-                            Bullet Selector
-                            </div>
                             <div id="bulletSwiper" class="swiper mySwiper">
                                 <div class="swiper-wrapper">
                                     <img src="/images/tankConstructor/Bullets/01.png" class="swiper-slide text-center flex flex-column bullet-selector-image">
@@ -83,38 +67,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- Stats -->
-                <div class="col col-md-4 text-center px-2">
-                    <div class="bg-dark-1 p-2 rounded rounded-5">
-                        <div class="row mx-2 pt-2">
-                            <div class="col-md-12 text-center h4 mx-0 mb-3 border-bottom">Stats</div>
-                        </div>
-                        <div>
-                            <!-- Input Strengh -->
-                            <div class="input-group mx-2 mt-5">
-                                <img src="https://img.icons8.com/ios/50/ffffff/clenched-fist.png" alt="" class="mx-2">
-                                <!--<label class="form-label mx-3" for="typeNumber">Strengh</label>-->
-                                <input type="number" name="strengh" class="form-control ml-3 mr-4 mt-2 bg-dark rounded rounded-5" style="color: white;"/>
-                            </div>
-                            <!-- Input Health -->
-                            <div class="input-group mx-2 mt-5">
-                                <img src="https://img.icons8.com/metro/52/ffffff/like.png" alt="" class="mx-2 mt-2"/>
-                                <input type="number" name="health" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;"/>
-                            </div>
-                            <!-- Input Velocity -->
-                            <div class="input-group mx-2 mt-5">
-                                <img src="https://img.icons8.com/ios/50/ffffff/running-rabbit.png" alt="" class="mx-2 mt-3 mb-3"/>
-                                <input type="number" name="speed" class="form-control ml-3 mr-4 mt-3 bg-dark rounded rounded-5" style="color: white;"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- Preview -->
-                <div class="col col-md-4 text-center px-2">
+                <div class="col-start-6 col-span-3 text-center px-2">
                     <div class="bg-dark-1 p-2 rounded rounded-5">
                         <div class="row mx-2 p-2">
-                            <div class="col-md-12 text-center h4 mx-0 mb-3 border-bottom">Preview</div>
-                            <div class="imagesContainer w-100 bg-dark-4 border border-primary rounded rounded-3">
+                            <div class="imagesContainer w-100 bg-dark-4  border-primary rounded rounded-3">
                                 <img id="bgImg" src="/images/tankConstructor/Light.png" alt="light" class="bg-image">
                                 <img id="towerImg" src="/images/tankConstructor/TowerEdits/Light1.png" alt="tower" class="tower-image">
                                 <img id="hullImg" src="/images/tankConstructor/Hulls/SmallHullA.png" alt="hull" class="hull-image">
@@ -126,29 +83,31 @@
                 </div>
             </div>
             <!-- Buttons -->
-            <div class="row bg-dark-1 flex flex-row rounded rounded-5 my-3 mx-1 p-2 justify-content-md-around">
-                <div class="w-25">
-                    <nuxt-link to="/my-tank" class="btn btn-danger w-100">Cancel</nuxt-link>
+            <div class="mt-12 row w-full bg-dark-1 flex flex-row rounded rounded-5 p-2 justify-between">
+                <div class="w-full">
+                    <nuxt-link to="/my-tank"> <button class="w-full py-2.5 inline-block px-6 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out">Cancel</button></nuxt-link>
                 </div>
-                <div class="w-25">
-                    <button type="submit" class="btn btn-success w-100">Update</button>
+                <div class="w-full">
+                    <button @click.prevent="updateUserTank" class=" w-full inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Update</button>
                 </div>
             </div>
             <!-- Inputs -->
             <div style="display: none;">
                 <input v-model="inputs.tower" type="text" name="tower" id="towerInput">
                 <input v-model="inputs.body" type="text" name="body" id="bodyInput">
-                <input v-model="inputs.track" type="text" name="track" id="trackInput">
                 <input v-model="inputs.bullet" type="text" name="bullet" id="bulletInput">
             </div>
         </form>
     </section>
 </template>
 
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+
 <script>
 
-import { Swiper } from 'swiper'
-import 'swiper/swiper-bundle.min.css'
+import Swiper from 'swiper';
+import 'swiper/swiper-bundle.min.css';
 
 export default {
     middleware: 'checkLogin',
@@ -166,169 +125,160 @@ export default {
         inputs: {
           tower: '',
           body: '',
-          track: '',
           bullet: '',
         }
       }
     },
     created () {
       this.inputs.tower = this.userTank.tower;
+      this.inputs.body = this.userTank.body;
+      this.inputs.bullet = this.userTank.bullet;
     },
     computed: {
       userTank() {
         const userTank = this.$store.state.userTank.userTank
-        return userTank
+        return userTank;
       },
     },
     methods: {
-      updateTank() {
-          
+      async updateUserTank() {
+        const options = {
+          method: 'PUT',
+          headers:{
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + localStorage.getItem('jwt'),
+          },
+          body: this.inputs,
+        }
+
+        await fetch(process.env.API_BASE_URL + 'api/updateSkin', options)
+          .then(function(response) {
+            return response.text();
+          })
+          .then(function(data) {
+            const res = JSON.parse(data)
+            console.log(res);
+          })
+          .catch(function(err) {
+            console.error(err);
+          });
       },
     },
     components: {
       Swiper,
     },
     mounted() {
-      var towerSwiper = new Swiper("#towerSwiper", {
-    slidesPerView: 3,
-    centeredSlides: true,
-    spaceBetween: 30,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "fraction",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    on: {
-      init: function () {
-        const towers = document.getElementsByClassName("tower-selector-image");
-        const towerImage = document.getElementById("towerInput").value;
-        let index = 0;
+          var towerSwiper = new Swiper("#towerSwiper", {
+            slidesPerView: 3,
+            centeredSlides: true,
+            spaceBetween: 30,
+            pagination: {
+              el: ".swiper-pagination",
+              type: "fraction",
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+            on: {
+              init: function () {
+                const towers = document.getElementsByClassName("tower-selector-image");
+                let towerImage = document.getElementById("towerInput").value;
 
-        for (const el of towers) {
-          if (el.src == towerImage) {
-            this.slideTo(index, 1000, true);
-            this.clickedIndex = index;
-            break;
-          }
-          index += 1;
-        }
-      },
-      slideChange: function () {
-        const index_currentSlide = this.realIndex;
-        const currentSlide = this.slides[index_currentSlide];
-        towerImg.src = currentSlide.src;
-        document.getElementById("towerInput").value = currentSlide.src;
-      },
-    },
-      });
-      var hullSwiper = new Swiper("#hullSwiper", {
-          slidesPerView: 3,
-          centeredSlides: true,
-          spaceBetween: 30,
-          pagination: {
-            el: ".swiper-pagination",
-            type: "fraction",
-          },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          on: {
-            init: function () {
-              const bodies = document.getElementsByClassName("hull-selector-image");
-              const bodyImage = document.getElementById("bodyInput").value;
-              let index = 0;
+                let index = 0;
+                towerImage = "http://localhost:3000/images" + towerImage.substr(9);
 
-              for (const el of bodies) {
-                if (el.src == bodyImage) {
-                  this.slideTo(index, 1000, true);
-                  this.clickedIndex = index;
-                  break;
+                for (const el of towers) {
+                  if (el.src == towerImage) {
+                    this.slideTo(index, 1000, true);
+                    this.clickedIndex = index;
+                    break;
+                  }
+                  index += 1;
                 }
-                index += 1;
-              }
+              },
+              slideChange: function () {
+                const index_currentSlide = this.realIndex;
+                const currentSlide = this.slides[index_currentSlide];
+                towerImg.src = currentSlide.src;
+                document.getElementById("towerInput").value = currentSlide.src;
+              },
             },
-            slideChange: function () {
-              const index_currentSlide = this.realIndex;
-              const currentSlide = this.slides[index_currentSlide];
-              hullImg.src = currentSlide.src;
-              document.getElementById("bodyInput").value = currentSlide.src;
-            },
-          },
-      });
-      var tracksSwiper = new Swiper("#tracksSwiper", {
-          slidesPerView: 3,
-          centeredSlides: true,
-          spaceBetween: 30,
-          pagination: {
-            el: ".swiper-pagination",
-            type: "fraction",
-          },
-          navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          },
-          on: {
-            init: function () {
-              const tracks = document.getElementsByClassName("tracks-selector-image");
-              const trackImage = document.getElementById("trackInput").value;
-              let index = 0;
+          });
+          var hullSwiper = new Swiper("#hullSwiper", {
+              slidesPerView: 3,
+              centeredSlides: true,
+              spaceBetween: 30,
+              pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+              },
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+              on: {
+                init: function () {
+                  const bodies = document.getElementsByClassName("hull-selector-image");
+                  let bodyImage = document.getElementById("bodyInput").value;
+                  let index = 0;
+    
+                  bodyImage = "http://localhost:3000/images" + bodyImage.substr(9);
 
-              for (const el of tracks) {
-                if (el.src == trackImage) {
-                  this.slideTo(index, 1000, true);
-                  this.clickedIndex = index;
-                  break;
-                }
-                index += 1;
-              }
-            },
-            slideChange: function () {
-              const index_currentSlide = this.realIndex;
-              const currentSlide = this.slides[index_currentSlide];
-              trackRightImg.src = currentSlide.src;
-              trackLeftImg.src = currentSlide.src;
-              document.getElementById("trackInput").value = currentSlide.src;
-            },
+                  for (const el of bodies) {
+                    if (el.src == bodyImage) {
+                      this.slideTo(index, 1000, true);
+                      this.clickedIndex = index;
+                      break;
+                    }
+                    index += 1;
+                  }
+                },
+                slideChange: function () {
+                  const index_currentSlide = this.realIndex;
+                  const currentSlide = this.slides[index_currentSlide];
+                  hullImg.src = currentSlide.src;
+                  document.getElementById("bodyInput").value = currentSlide.src;
+                },
+              },
+          });
+          var bulletSwiper = new Swiper("#bulletSwiper", {
+              slidesPerView: 3,
+              centeredSlides: true,
+              spaceBetween: 30,
+              pagination: {
+              el: ".swiper-pagination",
+              type: "fraction",
+              },
+              navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+              },
+              on: {
+                init: function () {
+                  const bullets = document.getElementsByClassName("bullet-selector-image");
+                  let bulletImage = document.getElementById("bulletInput").value;
+                  let index = 0;
+    
+                  bulletImage = "http://localhost:3000/images" + bulletImage.substr(9);
+                  
+                  for (const el of bullets) {
+                    if (el.src == bulletImage) {
+                      this.slideTo(index, 1000, true);
+                      this.clickedIndex = index;
+                      break;
+                    }
+                    index += 1;
+                  }
+                },
+              slideChange: function () {
+                  const index_currentSlide = this.realIndex;
+                  const currentSlide = this.slides[index_currentSlide];
+                  document.getElementById("bulletInput").value = currentSlide.src;
+              },
           },
-      });
-      var bulletSwiper = new Swiper("#bulletSwiper", {
-          slidesPerView: 3,
-          centeredSlides: true,
-          spaceBetween: 30,
-          pagination: {
-          el: ".swiper-pagination",
-          type: "fraction",
-          },
-          navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-          },
-          on: {
-            init: function () {
-              const bullets = document.getElementsByClassName("bullet-selector-image");
-              const bulletImage = document.getElementById("bulletInput").value;
-              let index = 0;
-
-              for (const el of bullets) {
-                if (el.src == bulletImage) {
-                  this.slideTo(index, 1000, true);
-                  this.clickedIndex = index;
-                  break;
-                }
-                index += 1;
-              }
-            },
-          slideChange: function () {
-              const index_currentSlide = this.realIndex;
-              const currentSlide = this.slides[index_currentSlide];
-              document.getElementById("bulletInput").value = currentSlide.src;
-          },
-      },
-      });
+          });
+        
     },
     setup() {
       const onSwiper = (swiper) => {
@@ -340,16 +290,75 @@ export default {
     },
 
 }
-
-/* SWIPERS */
-
-
-
-
-
-
 </script>
 
 <style>
 @import 'https://unpkg.com/swiper/swiper-bundle.min.css';
+
+/*Tank Preview*/
+.bg-image {
+    position: absolute;
+    height: 400px;
+}
+.tower-image {
+    position: absolute;
+    top: 150px;
+    left: 885px;
+    z-index: 4;
+}
+.hull-image {
+    position: absolute;
+    top: 268px;
+    left: 950px;
+    z-index: 2;
+}
+.track-left-image {
+    position: absolute;
+    width: 15% !important;
+    top: 285px;
+    left: 895px;
+    z-index: 1;
+}
+.track-right-image {
+    position: absolute;
+    width: 15% !important;
+    top: 285px;
+    left: 1035px;
+    z-index: 1;
+}
+.bullet-image {
+    position: absolute;
+    top: 380px;
+    left: 0px;
+    z-index: 4;
+}
+
+/* Tank Parts Swiper */
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+
+/* Center slide text vertically */
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+}
+
+.swiper {
+    width: 100%;
+}
+
 </style>
