@@ -22,7 +22,7 @@
                 <!-- Avatar -->
                 <a href="#">
                   <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                       src="/images/teamdh.JPEG">
+                    :src="images.image1">
                 </a>
 
                 <!-- Details -->
@@ -34,26 +34,7 @@
 
                   <!-- Title -->
                   <div class="text-gray-700 font-light mb-2">
-                    Team Member
-                  </div>
-
-                  <!-- Social Icons -->
-                  <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                    <!-- Linkedin -->
-                    <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                      <i class="mdi mdi-linkedin text-indigo-500 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Twitter -->
-                    <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                      <i class="mdi mdi-twitter text-blue-300 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Instagram -->
-                    <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                      <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                    </a>
+                    Unity Developer
                   </div>
                 </div>
               </div>
@@ -65,7 +46,7 @@
                 <!-- Avatar -->
                 <a href="#">
                   <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                       src="https://images.unsplash.com/photo-1634896941598-b6b500a502a7?fit=clamp&w=400&h=400&q=80">
+                       :src="images.image2">
                 </a>
 
                 <!-- Details -->
@@ -77,26 +58,7 @@
 
                   <!-- Title -->
                   <div class="text-gray-700 font-light mb-2">
-                    Team Member
-                  </div>
-
-                  <!-- Social Icons -->
-                  <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                    <!-- Linkedin -->
-                    <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                      <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Twitter -->
-                    <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                      <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Instagram -->
-                    <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                      <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                    </a>
+                    Web Developer
                   </div>
                 </div>
               </div>
@@ -108,7 +70,7 @@
                 <!-- Avatar -->
                 <a href="#">
                   <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                       src="https://images.unsplash.com/photo-1634193295627-1cdddf751ebf?fit=clamp&w=400&h=400&q=80">
+                       :src="images.image3">
                 </a>
 
                 <!-- Details -->
@@ -120,26 +82,7 @@
 
                   <!-- Title -->
                   <div class="text-gray-700 font-light mb-2">
-                    Team Memeber
-                  </div>
-
-                  <!-- Social Icons -->
-                  <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                    <!-- Linkedin -->
-                    <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                      <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Twitter -->
-                    <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                      <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Instagram -->
-                    <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                      <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                    </a>
+                    Unity Developer
                   </div>
                 </div>
               </div>
@@ -151,7 +94,7 @@
                 <!-- Avatar -->
                 <a href="#">
                   <img class="rounded-2xl drop-shadow-md hover:drop-shadow-xl transition-all duration-200 delay-100"
-                       src="https://images.unsplash.com/photo-1635003913011-95971abba560?fit=clamp&w=400&h=400&q=80">
+                       :src="images.image4">
                 </a>
 
                 <!-- Details -->
@@ -163,26 +106,7 @@
 
                   <!-- Title -->
                   <div class="text-gray-700 font-light mb-2">
-                    Team Member
-                  </div>
-
-                  <!-- Social Icons -->
-                  <div class="flex items-center justify-center opacity-50 hover:opacity-100
-                                    transition-opacity duration-300">
-                    <!-- Linkedin -->
-                    <a href="#" class="flex rounded-full hover:bg-indigo-50 h-10 w-10">
-                      <i class="mdi mdi-linkedin text-indigo-700 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Twitter -->
-                    <a href="#" class="flex rounded-full hover:bg-blue-50 h-10 w-10">
-                      <i class="mdi mdi-twitter text-blue-400 mx-auto mt-2"></i>
-                    </a>
-
-                    <!-- Instagram -->
-                    <a href="#" class="flex rounded-full hover:bg-orange-50 h-10 w-10">
-                      <i class="mdi mdi-instagram text-orange-400 mx-auto mt-2"></i>
-                    </a>
+                    Web Developer
                   </div>
                 </div>
               </div>
@@ -202,6 +126,14 @@ export default {
     }
     return 'default'
   },
+  async asyncData({store}) {
+    await store.dispatch('imagesTeam/dispatch')
+  },
+  computed: {
+    images() {
+      return this.$store.getters['imagesTeam/all']
+    },
+  }
 }
 </script>
 
