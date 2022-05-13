@@ -8,6 +8,9 @@
       <nuxt-link class="flex mr-24" :to="localePath('slot')"> 
           <button class=" self-center bg-gray-900 w-28 h-10 rounded-lg text-white font-bold">SLOTS</button>
       </nuxt-link>
+      <nuxt-link class="flex mr-24" :to="localePath('settings')"> 
+          <button class=" self-center bg-gray-900 w-28 h-10 rounded-lg text-white font-bold">Settings</button>
+      </nuxt-link>
     </div>
     <section class="mt-14 flex justify-center gap-x-6">
       <buy-item :title="$t('store.strength')" type="strength" price="20" :stat="userTank.strength" icon="/icons/strength.png" @buy="buy"/>
