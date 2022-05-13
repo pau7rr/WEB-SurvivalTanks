@@ -260,7 +260,7 @@ export default {
               on: {
                 init: function () {
                   const bullets = document.getElementsByClassName("bullet-selector-image");
-                  let bulletImageEdit = document.getElementById("bulletInput").value;
+                  let bulletImage = document.getElementById("bulletInput").value;
                   let index = 0;
     
                   let bulletImageEdit = "http://localhost:3000/images" + bulletImage.substr(9);
