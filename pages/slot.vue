@@ -1,5 +1,5 @@
 <template>
-<section class=" w-full flex flex-col">
+<section class=" w-full flex flex-col bg-kristal pb-60">
     <coins-field :coins="coins"/>
 <div class="mt-12 flex m-auto gap-x-1">
   <slot-machine
@@ -32,7 +32,6 @@
     </slot-machine>
 </div>
     <button :class="{' bg-gray-900': buttonEnabled}" :disabled="!buttonEnabled" class=" mx-auto mt-20 w-28 h-10 bg-gray-500 rounded-lg text-white font-bold" @click.prevent="start">SPIN</button>
-    
 </section>
 </template>
 
