@@ -187,7 +187,7 @@ export default {
                 let towerImage = document.getElementById("towerInput").value;
 
                 let index = 0;
-                towerImageEdited = "http://localhost:3000/images" + towerImage.substr(9);
+                let towerImageEdited = "http://localhost:3000/images" + towerImage.substr(9);
 
                 for (const el of towers) {
                   if (el.src == towerImageEdited) {
@@ -225,7 +225,7 @@ export default {
                   let bodyImage = document.getElementById("bodyInput").value;
                   let index = 0;
     
-                  bodyImageEdited = "http://localhost:3000/images" + bodyImage.substr(9);
+                  let bodyImageEdited = "http://localhost:3000/images" + bodyImage.substr(9);
 
                   for (const el of bodies) {
                     if (el.src == bodyImageEdited) {
@@ -263,7 +263,7 @@ export default {
                   let bulletImageEdit = document.getElementById("bulletInput").value;
                   let index = 0;
     
-                  bulletImage = "http://localhost:3000/images" + bulletImage.substr(9);
+                  let bulletImageEdit = "http://localhost:3000/images" + bulletImage.substr(9);
                   
                   for (const el of bullets) {
                     if (el.src == bulletImageEdit) {
