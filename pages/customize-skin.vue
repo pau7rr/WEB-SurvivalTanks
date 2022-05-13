@@ -168,6 +168,7 @@ export default {
       Swiper,
     },
     mounted() {
+      console.log();
           var towerSwiper = new Swiper("#towerSwiper", {
             slidesPerView: 3,
             centeredSlides: true,
@@ -186,12 +187,13 @@ export default {
                 let towerImage = document.getElementById("towerInput").value;
 
                 let index = 0;
-                towerImage = "http://localhost:3000/images" + towerImage.substr(9);
+                towerImageEdited = "http://localhost:3000/images" + towerImage.substr(9);
 
                 for (const el of towers) {
-                  if (el.src == towerImage) {
+                  if (el.src == towerImageEdited) {
                     this.slideTo(index, 1000, true);
                     this.clickedIndex = index;
+                    towerImage = el.src;
                     break;
                   }
                   index += 1;
@@ -223,12 +225,13 @@ export default {
                   let bodyImage = document.getElementById("bodyInput").value;
                   let index = 0;
     
-                  bodyImage = "http://localhost:3000/images" + bodyImage.substr(9);
+                  bodyImageEdited = "http://localhost:3000/images" + bodyImage.substr(9);
 
                   for (const el of bodies) {
-                    if (el.src == bodyImage) {
+                    if (el.src == bodyImageEdited) {
                       this.slideTo(index, 1000, true);
                       this.clickedIndex = index;
+                      bodyImage = el.src;
                       break;
                     }
                     index += 1;
@@ -257,15 +260,16 @@ export default {
               on: {
                 init: function () {
                   const bullets = document.getElementsByClassName("bullet-selector-image");
-                  let bulletImage = document.getElementById("bulletInput").value;
+                  let bulletImageEdit = document.getElementById("bulletInput").value;
                   let index = 0;
     
                   bulletImage = "http://localhost:3000/images" + bulletImage.substr(9);
                   
                   for (const el of bullets) {
-                    if (el.src == bulletImage) {
+                    if (el.src == bulletImageEdit) {
                       this.slideTo(index, 1000, true);
                       this.clickedIndex = index;
+                      bulletImage = el.src;
                       break;
                     }
                     index += 1;
