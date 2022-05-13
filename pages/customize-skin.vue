@@ -142,13 +142,15 @@ export default {
     },
     methods: {
       async updateUserTank() {
+        
         const options = {
           method: 'PUT',
+          mode: 'cors',
           headers:{
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + localStorage.getItem('jwt'),
           },
-          body: this.inputs,
+          body: JSON.stringify(this.inputs),
         }
 
         await fetch(process.env.API_BASE_URL + 'api/updateSkin', options)

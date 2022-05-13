@@ -181,6 +181,7 @@ export const actions = {
 
       const options = {
         method: 'PUT',
+        mode: 'cors',
         headers:{
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + localStorage.getItem('jwt')
@@ -200,5 +201,5 @@ export const actions = {
         .catch(function(err) {
           console.error(err);
         });
-    }
+    },
 }
