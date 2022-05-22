@@ -26,9 +26,6 @@
                                     <img src="/images/tankConstructor/TowerEdits/Medium1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
                                     <img src="/images/tankConstructor/TowerEdits/Medium2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
                                     <img src="/images/tankConstructor/TowerEdits/Medium3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="/images/tankConstructor/TowerEdits/Heavy1.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="/images/tankConstructor/TowerEdits/Heavy2.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
-                                    <img src="/images/tankConstructor/TowerEdits/Heavy3.png"  class="swiper-slide text-center flex flex-column tower-selector-image">
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
@@ -53,13 +50,15 @@
                             <div id="bulletSwiper" class="swiper mySwiper">
                                 <div class="swiper-wrapper">
                                     <img src="/images/tankConstructor/Bullets/01.png" class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="/images/tankConstructor/Bullets/12.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="/images/tankConstructor/Bullets/25.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="/images/tankConstructor/Bullets/02.png" class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="/images/tankConstructor/Bullets/07.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="/images/tankConstructor/Bullets/10.png"  class="swiper-slide w-50 text-center flex flex-column bullet-selector-image">
+                                    <img src="/images/tankConstructor/Bullets/14.png"  class="swiper-slide w-50 text-center flex flex-column bullet-selector-image">
+                                    <img src="/images/tankConstructor/Bullets/15.png"  class="swiper-slide w-50 text-center flex flex-column bullet-selector-image">
+                                    <img src="/images/tankConstructor/Bullets/18.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
                                     <img src="/images/tankConstructor/Bullets/33.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="/images/tankConstructor/Bullets/45.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="/images/tankConstructor/Bullets/51.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="/images/tankConstructor/Bullets/56.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
-                                    <img src="/images/tankConstructor/Bullets/66.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="/images/tankConstructor/Bullets/34.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
+                                    <img src="/images/tankConstructor/Bullets/36.png"  class="swiper-slide text-center flex flex-column bullet-selector-image">
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
@@ -77,6 +76,7 @@
                                 <img id="hullImg" src="/images/tankConstructor/Hulls/SmallHullA.png" alt="hull" class="hull-image">
                                 <img id="trackLeftImg" src="/images/tankConstructor/Tracks/TrackAFrame1.png" alt="trackLeft" class="track-left-image">
                                 <img id="trackRightImg" src="/images/tankConstructor/Tracks/TrackAFrame1.png" alt="trackRight" class="track-right-image">
+                                <img hidden id="bulletImg" src="/images/tankConstructor/Bullets/02.png" alt="bullet" class="bullet-image">
                             </div>
                         </div>
                     </div>
@@ -93,9 +93,9 @@
             </div>
             <!-- Inputs -->
             <div style="display: none;">
-                <input v-model="inputs.tower" type="text" name="tower" id="towerInput">
-                <input v-model="inputs.body" type="text" name="body" id="bodyInput">
-                <input v-model="inputs.bullet" type="text" name="bullet" id="bulletInput">
+                <input v-model="inputs.tower" @blur="updateTower" type="text" name="tower" id="towerInput">
+                <input v-model="inputs.body" @blur="updateBody" type="text" name="body" id="bodyInput">
+                <input v-model="inputs.bullet" @blur="updateBullet" type="text" name="bullet" id="bulletInput">
             </div>
         </form>
     </section>
@@ -165,12 +165,20 @@ export default {
             console.error(err);
           });
       },
+      updateTower() {
+        this.inputs.tower = document.getElementById("towerInput").value;
+      },
+      updateBody() {
+        this.inputs.body = document.getElementById("bodyInput").value;
+      },
+      updateBullet() {
+        this.inputs.bullet = document.getElementById("bulletInput").value;
+      }
     },
     components: {
       Swiper,
     },
     mounted() {
-      console.log();
           var towerSwiper = new Swiper("#towerSwiper", {
             slidesPerView: 3,
             centeredSlides: true,
@@ -187,10 +195,8 @@ export default {
               init: function () {
                 const towers = document.getElementsByClassName("tower-selector-image");
                 let towerImage = document.getElementById("towerInput").value;
-
                 let index = 0;
                 let towerImageEdited = "http://localhost:3000/images" + towerImage.substr(9);
-
                 for (const el of towers) {
                   if (el.src == towerImageEdited) {
                     this.slideTo(index, 1000, true);
@@ -205,7 +211,9 @@ export default {
                 const index_currentSlide = this.realIndex;
                 const currentSlide = this.slides[index_currentSlide];
                 towerImg.src = currentSlide.src;
-                document.getElementById("towerInput").value = currentSlide.src;
+                document.getElementById("towerInput").value = "../assets" + towerImg.src.substr(28);
+                document.getElementById("towerInput").focus();
+                document.getElementById("towerInput").blur();
               },
             },
           });
@@ -243,7 +251,9 @@ export default {
                   const index_currentSlide = this.realIndex;
                   const currentSlide = this.slides[index_currentSlide];
                   hullImg.src = currentSlide.src;
-                  document.getElementById("bodyInput").value = currentSlide.src;
+                  document.getElementById("bodyInput").value = "../assets" + hullImg.src.substr(28);
+                  document.getElementById("bodyInput").focus();
+                  document.getElementById("bodyInput").blur();
                 },
               },
           });
@@ -280,7 +290,11 @@ export default {
               slideChange: function () {
                   const index_currentSlide = this.realIndex;
                   const currentSlide = this.slides[index_currentSlide];
-                  document.getElementById("bulletInput").value = currentSlide.src;
+                  bulletImg.src = currentSlide.src;
+
+                  document.getElementById("bulletInput").value = "../assets" + bulletImg.src.substr(28);
+                  document.getElementById("bulletInput").focus();
+                  document.getElementById("bulletInput").blur();
               },
           },
           });
