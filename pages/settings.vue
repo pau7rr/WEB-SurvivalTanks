@@ -61,8 +61,6 @@ export default {
     },
     methods: {
         changeUsername() {
-            console.log(this.username);
-
             fetch(process.env.API_BASE_URL + 'api/user/updateUsername', {
                 method: 'PUT',
                 mode: 'cors',
@@ -85,8 +83,6 @@ export default {
                 });      
         },
         changePassword() {
-            console.log(this.username);
-
             fetch(process.env.API_BASE_URL + 'api/user/updatePassword', {
                 method: 'PUT',
                 mode: 'cors',

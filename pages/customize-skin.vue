@@ -159,7 +159,6 @@ export default {
           })
           .then(function(data) {
             const res = JSON.parse(data)
-            console.log(res);
           })
           .catch(function(err) {
             console.error(err);

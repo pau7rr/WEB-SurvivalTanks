@@ -115,19 +115,16 @@ export default {
             for(const [key, value] of Object.entries(repetidos)){
 
                 if (value === 2) {
-                    console.log('2 -', key)
                     this.prize = key * 2
                     this.sumCoins()
                 }
                 
                 if (value === 3) {
-                    console.log('3 -', key)
                     this.prize = key * 4
                     this.sumCoins()
                 }
                 
                 if (value === 4) {
-                    console.log('4 -', key)
                     this.prize = (key + key) * 25
                     this.sumCoins()
                 }

@@ -154,7 +154,6 @@ export default {
   },
   computed: {
     errorMsg() {
-      console.log(this.$store.state.user);
       return this.$store.state.user.errorMessage
     }
   },

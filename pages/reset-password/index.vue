@@ -54,7 +54,6 @@ export default {
     checkResponse(res){
       
       if (res.success === false) {
-        console.log('return');
         return
       }
 
