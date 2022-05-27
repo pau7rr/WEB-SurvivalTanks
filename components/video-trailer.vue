@@ -17,10 +17,9 @@
 export default {
     methods: {
         download() {
-            window.open("https://drive.google.com/file/d/1l7iAf3CgAVzT0qToHTzl0I7myERA1g3N/view", "_blank");
+            window.open("https://drive.google.com/file/d/1l7iAf3CgAVzT0qToHTzl0I7myERA1g3N/view?usp=sharing", "_blank");
         }
     }
-
 }
 </script>
 
